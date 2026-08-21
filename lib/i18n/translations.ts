@@ -40,11 +40,11 @@ export const translations = {
     },
     about: {
       belief:
-        "I believe in a user centered design approach, ensuring that every project I work on is tailored to meet the specific needs of its users.",
+        "I prioritize user needs and strive to craft every project to perfectly align with their real-world requirements.",
       label: "About Me.",
       hi: "Hi, I'm Tsolmon.",
-      p1: "I'm Tsolmon — friends also call me Tsoomoo. I'm a junior software engineer from Ulaanbaatar. I loved computers as a kid, then studied law in Moscow, and now I'm at Pinecone Academy, graduating this October.",
-      p2: "I build full-stack web apps with a user-centered approach: performance, accessibility, and a clean experience. Nuudelchin and Buy Me Coffee were team projects; the rest I shipped myself.",
+      p1: "I'm Tsolmon, a software engineering student based in Ulaanbaatar. Though I originally studied law in Moscow, I decided to follow my lifelong passion for technology and pivot my career. I am currently honing my skills at Pinecone Academy, with my graduation set for this October.",
+      p2: "I am a full-stack developer. My 3 guiding principles are to make everything fast, accessible, and easy to use.",
     },
     stack: {
       title: "My Stack",
@@ -136,11 +136,11 @@ export const translations = {
     },
     about: {
       belief:
-        "Би хэрэглэгчийн хэрэгцээг нэн тэргүүнд тавьдаг зарчмыг баримталж, хийж буй төсөл бүрээ хэрэглэгчдийнхээ бодит хэрэгцээ шаардлагад бүрэн нийцүүлэн урлахыг хичээдэг.",
+        "Би хэрэглэгчийн хүсэл сонирхлыг нэн тэргүүнд тавьж, төсөл бүрээ тэдний бодит хэрэгцээ шаардлагад бүрэн нийцүүлэн урлахыг зорьдог.",
       label: "Миний тухай.",
       hi: "Сайн уу, Цолмон байна.",
-      p1: "Намайг Цолмон гэдэг — найзууд маань Цоомоо гэж дууддаг. Улаанбаатарт амьдардаг програм хангамжийн инженер байна. Багаасаа компьютерт дуртай байсан би Москвад хууль сураад, одоо Pinecone Academy-д сурч байгаа, энэ 10-р сард төгсөнө.",
-      p2: "Би full-stack вэб апп хийдэг: хурд, хүртээмж, цэвэр хэрэглээ."
+      p1: "Намайг Цолмон гэдэг. Улаанбаатар хотод амьдардаг, програм хангамжийн инженер чиглэлээр суралцаж буй хөгжүүлэгч байна. Москвад хуулийн чиглэлээр суралцсан ч багаасаа л компьютерт хоббитой байсан хүсэл сонирхлоо хөөн амьдралдаа эргэлт хийж, одоо Pinecone Academy-д програм хангамжийн инженерээр суралцаж байна. Энэ оны 10 дугаар сард төгснө.",
+      p2: "Би Full-stack хөгжүүлэлэгч. Миний баримталдаг 3 зарчим бол: Хурдан, хүртээмжтэй, хэрэглэхэд хялбар байх."
     },
     stack: {
       title: "Миний Стэк",
