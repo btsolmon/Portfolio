@@ -10,6 +10,7 @@ const COLORS = [
   "bg-blue-500 text-white",
   "bg-teal-500 text-black",
   "bg-indigo-500 text-white",
+  "bg-rose-500 text-white",
 ];
 
 const MENU_LINKS = [
@@ -17,6 +18,7 @@ const MENU_LINKS = [
   { name: "About Me", url: "#about-me" },
   { name: "Experience", url: "#my-experience" },
   { name: "Projects", url: "#selected-projects" },
+  { name: "GitHub", url: "#github" },
 ];
 
 export default function Navbar() {
@@ -61,7 +63,7 @@ export default function Navbar() {
 
       <div
         className={cn(
-          "fixed top-0 right-0 z-30 flex h-[100dvh] w-[500px] max-w-[calc(100vw-3rem)] translate-x-full transform flex-col gap-y-14 overflow-hidden py-10 transition-transform duration-700 lg:justify-center",
+          "fixed top-0 right-0 z-30 flex h-[100dvh] w-[500px] max-w-[calc(100vw-3rem)] translate-x-full transform flex-col gap-y-10 overflow-y-auto py-10 transition-transform duration-700 lg:justify-center",
           { "translate-x-0": isMenuOpen },
         )}
       >
@@ -85,7 +87,7 @@ export default function Navbar() {
                       rel="noreferrer"
                       className="text-lg capitalize hover:underline"
                     >
-                      {link.name}
+                      {link.label}
                     </a>
                   </li>
                 ))}

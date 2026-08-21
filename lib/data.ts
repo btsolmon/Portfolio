@@ -18,10 +18,14 @@ export const ABOUT = {
   ],
 };
 
+export const GITHUB_USERNAME = "btsolmon";
+
 export const SOCIAL_LINKS = [
-  { name: "github", url: "https://github.com/" },
-  { name: "linkedin", url: "https://www.linkedin.com/" },
-];
+  { name: "facebook", label: "Facebook", url: "https://www.facebook.com/tsolmon.bayar.3" },
+  { name: "instagram", label: "Instagram", url: "https://www.instagram.com/tsoommoo" },
+  { name: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/tsolmon-bayar-01a15b430/" },
+  { name: "github", label: "GitHub", url: "https://github.com/btsolmon" },
+] as const;
 
 export const MY_STACK = {
   frontend: [

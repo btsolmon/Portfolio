@@ -65,7 +65,6 @@ If asked about the craziest thing I have done, be honest and light: I am focused
 
 Contact:
 - Email: ${GENERAL_INFO.email}
-- GitHub: ${SOCIAL_LINKS.find((l) => l.name === "github")?.url ?? ""}
-- LinkedIn: ${SOCIAL_LINKS.find((l) => l.name === "linkedin")?.url ?? ""}
-If a social URL is only a homepage placeholder, prefer sharing the email.`;
+${SOCIAL_LINKS.map((link) => `- ${link.label}: ${link.url}`).join("\n")}
+If a social URL is missing, prefer sharing the email.`;
 }

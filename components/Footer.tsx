@@ -1,9 +1,10 @@
+import FollowMe from "@/components/FollowMe";
 import { GENERAL_INFO } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 pb-5 text-center" id="contact">
-      <div className="mx-auto max-w-[1148px] px-4">
+    <footer className="relative z-10" id="contact">
+      <div className="mx-auto max-w-[1148px] px-4 pb-5 text-center">
         <p className="text-lg">Have a project in mind?</p>
         <a
           href={`mailto:${GENERAL_INFO.email}`}
@@ -12,6 +13,7 @@ export default function Footer() {
           {GENERAL_INFO.email}
         </a>
       </div>
+      <FollowMe />
     </footer>
   );
 }

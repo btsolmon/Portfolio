@@ -59,7 +59,7 @@ export default function AboutMe() {
         </h2>
 
         <p className="slide-up-and-fade border-b border-border pb-3 text-muted-foreground">
-          This is me.
+          About Me.
         </p>
 
         <div className="mt-9 grid md:grid-cols-12">

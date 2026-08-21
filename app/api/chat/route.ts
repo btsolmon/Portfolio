@@ -9,7 +9,13 @@ export const maxDuration = 30;
 
 const MAX_MESSAGES = 16;
 const MAX_CHARS = 2000;
-const MODEL = process.env.GEMINI_MODEL ?? "gemini-2.5-flash";
+const MODELS = [
+  process.env.GEMINI_MODEL,
+  "gemini-2.5-flash",
+  "gemini-2.5-flash-lite",
+  "gemini-flash-latest",
+  "gemini-2.0-flash",
+].filter((model, index, list): model is string => Boolean(model) && list.indexOf(model) === index);
 
 function isChatMessage(value: unknown): value is ChatMessage {
   if (!value || typeof value !== "object") return false;
@@ -29,8 +35,59 @@ function toGeminiContents(messages: ChatMessage[]) {
   }));
 }
 
+function chunkText(chunk: { text?: string }) {
+  try {
+    return chunk.text ?? "";
+  } catch {
+    return "";
+  }
+}
+
+function geminiMessage(error: unknown) {
+  const message =
+    error && typeof error === "object" && "message" in error
+      ? String((error as { message: unknown }).message)
+      : "";
+
+  const lower = message.toLowerCase();
+  if (lower.includes("api key") || lower.includes("permission") || lower.includes("unauthenticated")) {
+    return "The Gemini API key is invalid. Check GEMINI_API_KEY in Vercel Environment Variables.";
+  }
+  if (lower.includes("quota") || lower.includes("resource exhausted")) {
+    return "Gemini quota is used up for now. Try again later.";
+  }
+  return "I couldn't reply just now. Please try again.";
+}
+
+async function startStream(ai: GoogleGenAI, contents: ReturnType<typeof toGeminiContents>) {
+  let lastError: unknown;
+
+  for (const model of MODELS) {
+    for (const thinking of [undefined, { thinkingBudget: 0 }]) {
+      try {
+        return await ai.models.generateContentStream({
+          model,
+          contents,
+          config: {
+            systemInstruction: buildSystemPrompt(),
+            temperature: 0.7,
+            maxOutputTokens: 2048,
+            ...(thinking ? { thinkingConfig: thinking } : {}),
+          },
+        });
+      } catch (error) {
+        lastError = error;
+        console.error(`Gemini failed (${model}, thinking=${Boolean(thinking)}):`, error);
+      }
+    }
+  }
+
+  throw lastError;
+}
+
 export async function POST(req: Request) {
-  if (!process.env.GEMINI_API_KEY) {
+  const apiKey = process.env.GEMINI_API_KEY?.trim();
+  if (!apiKey) {
     return Response.json(
       { error: "This chat isn't set up yet." },
       { status: 503 },
@@ -70,27 +127,16 @@ export async function POST(req: Request) {
     return Response.json({ error: "Invalid messages." }, { status: 400 });
   }
 
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+  const ai = new GoogleGenAI({ apiKey });
 
   try {
-    const stream = await ai.models.generateContentStream({
-      model: MODEL,
-      contents: toGeminiContents(history),
-      config: {
-        systemInstruction: buildSystemPrompt(),
-        temperature: 0.7,
-        maxOutputTokens: 800,
-        thinkingConfig: { thinkingBudget: 0 },
-        abortSignal: req.signal,
-      },
-    });
-
+    const stream = await startStream(ai, toGeminiContents(history));
     const encoder = new TextEncoder();
     const readable = new ReadableStream({
       async start(controller) {
         try {
           for await (const chunk of stream) {
-            const text = chunk.text;
+            const text = chunkText(chunk);
             if (text) controller.enqueue(encoder.encode(text));
           }
           controller.close();
@@ -108,9 +154,6 @@ export async function POST(req: Request) {
     });
   } catch (error) {
     console.error("Gemini chat failed:", error);
-    return Response.json(
-      { error: "I couldn't reply just now. Please try again." },
-      { status: 502 },
-    );
+    return Response.json({ error: geminiMessage(error) }, { status: 502 });
   }
 }

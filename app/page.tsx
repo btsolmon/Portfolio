@@ -5,6 +5,7 @@ import ChatPanel from "@/components/ChatPanel";
 import Experiences from "@/components/Experiences";
 import FluidCursor from "@/components/FluidCursor";
 import Footer from "@/components/Footer";
+import GitContributions from "@/components/GitContributions";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import ProjectList from "@/components/ProjectList";
@@ -25,6 +26,7 @@ export default function Home() {
         <Skills />
         <Experiences />
         <ProjectList />
+        <GitContributions />
       </main>
       <Footer />
       <StickyEmail />
