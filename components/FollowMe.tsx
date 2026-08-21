@@ -1,11 +1,18 @@
+"use client";
+
 import { SocialIcon } from "@/components/icons/SocialIcons";
 import { SOCIAL_LINKS } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 export default function FollowMe() {
+  const { t } = useLanguage();
+
   return (
     <div className="relative z-10 mt-20 bg-neutral-950/20 py-16 text-white">
       <div className="mx-auto flex max-w-[1148px] flex-col items-center px-4">
-        <p className="text-sm font-medium tracking-[0.42em] drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">FOLLOW ME</p>
+        <p className="text-sm font-medium tracking-[0.42em] drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
+          {t("footer.follow")}
+        </p>
         <ul className="mt-7 flex items-center gap-6 sm:gap-8">
           {SOCIAL_LINKS.map((link) => (
             <li key={link.name}>

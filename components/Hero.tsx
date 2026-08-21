@@ -11,21 +11,14 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-
-const questions = {
-  Me: "Who are you? I want to know more about you.",
-  Projects: "What are your projects? What are you working on right now?",
-  Skills: "What are your skills? Give me a list of your soft and hard skills.",
-  Fun: "What's the craziest thing you've ever done? What are your hobbies?",
-  Contact: "How can I contact you?",
-} as const;
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 const questionConfig = [
-  { key: "Me", color: "#329696", icon: Laugh },
-  { key: "Skills", color: "#856ED9", icon: Layers },
-  { key: "Projects", color: "#3E9858", icon: BriefcaseBusiness },
-  { key: "Fun", color: "#B95F9D", icon: PartyPopper },
-  { key: "Contact", color: "#C19433", icon: UserRoundSearch },
+  { key: "Me", color: "#329696", icon: Laugh, label: "hero.me", question: "hero.qMe" },
+  { key: "Skills", color: "#856ED9", icon: Layers, label: "hero.skills", question: "hero.qSkills" },
+  { key: "Projects", color: "#3E9858", icon: BriefcaseBusiness, label: "hero.projects", question: "hero.qProjects" },
+  { key: "Fun", color: "#B95F9D", icon: PartyPopper, label: "hero.fun", question: "hero.qFun" },
+  { key: "Contact", color: "#C19433", icon: UserRoundSearch, label: "hero.contact", question: "hero.qContact" },
 ] as const;
 
 const topElementVariants = {
@@ -53,6 +46,7 @@ type HeroProps = {
 
 export default function Hero({ onAsk, asking }: HeroProps) {
   const [input, setInput] = useState("");
+  const { t } = useLanguage();
 
   const ask = (query: string) => {
     const q = query.trim();
@@ -76,36 +70,37 @@ export default function Hero({ onAsk, asking }: HeroProps) {
       </div>
 
       <motion.div
-        className="z-10 mt-24 mb-8 flex flex-col items-center text-center md:mt-4 md:mb-12"
+        className="z-10 mt-24 mb-3 flex flex-col items-center text-center md:mt-4 md:mb-4"
         variants={topElementVariants}
         initial="hidden"
         animate="visible"
       >
         <h2 className="mt-1 text-xl font-semibold text-neutral-600 md:text-2xl">
-          Hey, I&apos;m Tsolmon 👋
+          {t("hero.hey")}
         </h2>
         <h1 className="text-4xl font-bold tracking-tight text-neutral-950 sm:text-5xl md:text-6xl lg:text-7xl">
-          Junior Software Engineer
+          {t("hero.role")}
         </h1>
       </motion.div>
 
-      <div className="relative z-10 flex h-56 w-48 items-end justify-center sm:h-80 sm:w-72">
-        <Image
-          src="/hero.png"
-          alt="Tsolmon"
-          width={644}
-          height={955}
-          priority
-          className="pointer-events-none h-full w-auto select-none object-contain object-bottom drop-shadow-[0_18px_35px_rgba(0,0,0,0.18)]"
-        />
-      </div>
+      <div className="relative z-10 flex w-full flex-col items-center">
+        <div className="relative z-0 flex h-72 w-56 items-end justify-center sm:h-[26rem] sm:w-80 lg:h-[28rem] lg:w-[22rem]">
+          <Image
+            src="/hero.png"
+            alt="Tsolmon"
+            width={644}
+            height={955}
+            priority
+            className="pointer-events-none h-full w-auto select-none object-contain object-bottom drop-shadow-[0_18px_35px_rgba(0,0,0,0.18)]"
+          />
+        </div>
 
-      <motion.div
-        variants={bottomElementVariants}
-        initial="hidden"
-        animate="visible"
-        className="z-10 mt-4 flex w-full flex-col items-center justify-center md:px-0"
-      >
+        <motion.div
+          variants={bottomElementVariants}
+          initial="hidden"
+          animate="visible"
+          className="relative z-10 -mt-8 flex w-full flex-col items-center justify-center sm:-mt-10 md:px-0"
+        >
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -118,13 +113,13 @@ export default function Hero({ onAsk, asking }: HeroProps) {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask me anything…"
+              placeholder={t("hero.ask")}
               className="w-full border-none bg-transparent text-base text-neutral-800 placeholder:text-neutral-500 focus:outline-none"
             />
             <button
               type="submit"
               disabled={!input.trim() || asking}
-              aria-label="Submit question"
+              aria-label={t("hero.submit")}
               className="flex items-center justify-center rounded-full bg-primary p-2.5 text-white transition-colors hover:bg-[#015bb8] disabled:opacity-70"
             >
               <ArrowRight className="h-5 w-5" />
@@ -133,22 +128,23 @@ export default function Hero({ onAsk, asking }: HeroProps) {
         </form>
 
         <div className="mt-4 grid w-full max-w-2xl grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
-          {questionConfig.map(({ key, color, icon: Icon }) => (
+          {questionConfig.map(({ key, color, icon: Icon, label, question }) => (
             <button
               key={key}
               type="button"
               disabled={asking}
-              onClick={() => ask(questions[key])}
+              onClick={() => ask(t(question))}
               className="aspect-square w-full cursor-pointer rounded-2xl border border-neutral-200 bg-white/30 py-8 shadow-none backdrop-blur-lg transition-transform hover:bg-neutral-100/50 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 md:p-10"
             >
               <div className="flex h-full flex-col items-center justify-center gap-1 text-gray-700">
                 <Icon size={22} strokeWidth={2} color={color} />
-                <span className="text-xs font-medium sm:text-sm">{key}</span>
+                <span className="text-xs font-medium sm:text-sm">{t(label)}</span>
               </div>
             </button>
           ))}
         </div>
       </motion.div>
+      </div>
     </section>
   );
 }

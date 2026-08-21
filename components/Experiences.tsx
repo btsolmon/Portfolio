@@ -6,11 +6,13 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Experiences() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useGSAP(
     () => {
@@ -55,16 +57,18 @@ export default function Experiences() {
   return (
     <section className="relative z-10 py-section" id="my-experience">
       <div className="mx-auto max-w-[1148px] px-4" ref={containerRef}>
-        <SectionTitle title="My Experience" />
+        <SectionTitle title={t("experience.title")} />
 
         <div className="grid gap-14">
           {MY_EXPERIENCE.map((item) => (
             <div key={item.title} className="experience-item">
               <p className="text-xl text-muted-foreground">{item.company}</p>
               <p className="font-anton mt-3.5 mb-2.5 text-5xl leading-none">
-                {item.title}
+                {t("experience.role")}
               </p>
-              <p className="text-lg text-muted-foreground">{item.duration}</p>
+              <p className="text-lg text-muted-foreground">
+                {t("experience.duration")}
+              </p>
             </div>
           ))}
         </div>

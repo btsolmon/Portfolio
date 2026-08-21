@@ -9,12 +9,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import { MouseEvent, useRef, useState } from "react";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function ProjectList() {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageContainer = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<string | null>(
     PROJECTS[0].slug,
   );
@@ -93,7 +95,7 @@ export default function ProjectList() {
   return (
     <section className="relative z-10 pb-section" id="selected-projects">
       <div className="mx-auto max-w-[1148px] px-4">
-        <SectionTitle title="SELECTED PROJECTS" />
+        <SectionTitle title={t("projects.title")} />
 
         <div className="group/projects relative" ref={containerRef}>
           {selectedProject !== null && (

@@ -4,6 +4,9 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { MoveUpRight } from "lucide-react";
 import { GENERAL_INFO, SOCIAL_LINKS } from "@/lib/data";
+import LanguageToggle from "@/components/LanguageToggle";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import type { TranslationKey } from "@/lib/i18n/translations";
 
 const COLORS = [
   "bg-yellow-500 text-black",
@@ -13,16 +16,17 @@ const COLORS = [
   "bg-rose-500 text-white",
 ];
 
-const MENU_LINKS = [
-  { name: "Home", url: "#home" },
-  { name: "About Me", url: "#about-me" },
-  { name: "Experience", url: "#my-experience" },
-  { name: "Projects", url: "#selected-projects" },
-  { name: "GitHub", url: "#github" },
+const MENU_LINKS: { name: TranslationKey; url: string }[] = [
+  { name: "nav.home", url: "#home" },
+  { name: "nav.about", url: "#about-me" },
+  { name: "nav.experience", url: "#my-experience" },
+  { name: "nav.projects", url: "#selected-projects" },
+  { name: "nav.github", url: "#github" },
 ];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const go = (url: string) => {
     setIsMenuOpen(false);
@@ -33,10 +37,11 @@ export default function Navbar() {
   return (
     <>
       <div className="sticky top-0 z-40">
+        <LanguageToggle className="absolute top-5 left-5 z-[2] md:left-10" />
         <button
           className="group absolute top-5 right-5 z-[2] size-12 md:right-10"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={isMenuOpen ? t("nav.close") : t("nav.menu")}
         >
           <span
             className={cn(
@@ -77,7 +82,7 @@ export default function Navbar() {
         <div className="mx-8 flex w-full max-w-[300px] grow md:items-center sm:mx-auto">
           <div className="flex w-full gap-10 max-lg:flex-col lg:justify-between">
             <div className="max-lg:order-2">
-              <p className="mb-5 text-muted-foreground md:mb-8">SOCIAL</p>
+              <p className="mb-5 text-muted-foreground md:mb-8">{t("nav.social")}</p>
               <ul className="space-y-3">
                 {SOCIAL_LINKS.map((link) => (
                   <li key={link.name}>
@@ -94,7 +99,7 @@ export default function Navbar() {
               </ul>
             </div>
             <div>
-              <p className="mb-5 text-muted-foreground md:mb-8">MENU</p>
+              <p className="mb-5 text-muted-foreground md:mb-8">{t("nav.menuLabel")}</p>
               <ul className="space-y-3">
                 {MENU_LINKS.map((link, idx) => (
                   <li key={link.name}>
@@ -113,7 +118,7 @@ export default function Navbar() {
                           className="scale-0 transition-all group-hover:scale-100"
                         />
                       </span>
-                      {link.name}
+                      {t(link.name)}
                     </button>
                   </li>
                 ))}
@@ -123,7 +128,7 @@ export default function Navbar() {
         </div>
 
         <div className="mx-8 w-full max-w-[300px] sm:mx-auto">
-          <p className="mb-4 text-muted-foreground">GET IN TOUCH</p>
+          <p className="mb-4 text-muted-foreground">{t("nav.contact")}</p>
           <a href={`mailto:${GENERAL_INFO.email}`}>{GENERAL_INFO.email}</a>
         </div>
       </div>

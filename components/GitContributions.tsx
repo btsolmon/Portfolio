@@ -4,6 +4,8 @@ import SectionTitle from "@/components/SectionTitle";
 import { GITHUB_USERNAME } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { useEffect, useMemo, useState } from "react";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import type { TranslationKey } from "@/lib/i18n/translations";
 
 type Contribution = {
   date: string;
@@ -24,22 +26,20 @@ const LEVEL_CLASS = [
   "bg-[#015bb8]",
 ] as const;
 
-const MONTHS = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-] as const;
-
-const DAY_LABELS = ["", "Mon", "", "Wed", "", "Fri", ""] as const;
+const MONTH_KEYS = [
+  "github.m1",
+  "github.m2",
+  "github.m3",
+  "github.m4",
+  "github.m5",
+  "github.m6",
+  "github.m7",
+  "github.m8",
+  "github.m9",
+  "github.m10",
+  "github.m11",
+  "github.m12",
+] as const satisfies readonly TranslationKey[];
 
 function toWeeks(days: Contribution[]) {
   if (!days.length) return [];
@@ -70,12 +70,15 @@ function monthOfWeek(week: (Contribution | null)[]) {
   return new Date(`${day.date}T00:00:00`).getMonth();
 }
 
-function monthLabels(weeks: (Contribution | null)[][]) {
+function monthLabels(
+  weeks: (Contribution | null)[][],
+  months: readonly string[],
+) {
   return weeks.map((week, index) => {
     const month = monthOfWeek(week);
     if (month === null) return "";
     const previous = index > 0 ? monthOfWeek(weeks[index - 1]) : null;
-    return month !== previous ? MONTHS[month] : "";
+    return month !== previous ? months[month] : "";
   });
 }
 
@@ -83,6 +86,9 @@ export default function GitContributions() {
   const [days, setDays] = useState<Contribution[]>([]);
   const [total, setTotal] = useState(0);
   const [error, setError] = useState(false);
+  const { t } = useLanguage();
+  const monthNames = MONTH_KEYS.map((key) => t(key));
+  const dayLabels = ["", t("github.dayMon"), "", t("github.dayWed"), "", t("github.dayFri"), ""];
 
   useEffect(() => {
     let cancelled = false;
@@ -107,12 +113,12 @@ export default function GitContributions() {
   }, []);
 
   const weeks = useMemo(() => toWeeks(days), [days]);
-  const months = useMemo(() => monthLabels(weeks), [weeks]);
+  const months = useMemo(() => monthLabels(weeks, monthNames), [weeks, monthNames]);
 
   return (
     <section className="relative z-10 py-section" id="github">
       <div className="mx-auto max-w-[1148px] px-4">
-        <SectionTitle title="GitHub" />
+        <SectionTitle title={t("github.title")} />
 
         <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
           <div>
@@ -121,10 +127,10 @@ export default function GitContributions() {
             </p>
             <p className="mt-3 text-muted-foreground">
               {error
-                ? "Couldn’t load the graph right now."
+                ? t("github.error")
                 : days.length
-                  ? `${total} contributions in the last year`
-                  : "Loading contributions…"}
+                  ? t("github.count", { n: total })
+                  : t("github.loading")}
             </p>
           </div>
           <a
@@ -133,7 +139,7 @@ export default function GitContributions() {
             rel="noreferrer"
             className="text-sm text-muted-foreground transition-colors hover:text-primary"
           >
-            View profile →
+            {t("github.profile")}
           </a>
         </div>
 
@@ -142,7 +148,7 @@ export default function GitContributions() {
             <div className="flex min-w-[720px] justify-center">
               <div className="mr-1.5 flex w-8 shrink-0 flex-col">
                 <div className="mb-[3px] h-3.5" />
-                {DAY_LABELS.map((label, index) => (
+                {dayLabels.map((label, index) => (
                   <div
                     key={`${label}-${index}`}
                     className="flex h-[11px] items-center justify-end text-[10px] leading-none text-muted-foreground sm:h-3"
@@ -196,11 +202,11 @@ export default function GitContributions() {
           )}
 
           <div className="mt-4 flex items-center justify-end gap-1.5 text-xs text-muted-foreground">
-            <span>Less</span>
+            <span>{t("github.less")}</span>
             {LEVEL_CLASS.map((color) => (
               <span key={color} className={cn("size-2.5 rounded-[2px]", color)} />
             ))}
-            <span>More</span>
+            <span>{t("github.more")}</span>
           </div>
         </div>
       </div>

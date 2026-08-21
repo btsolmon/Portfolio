@@ -6,6 +6,7 @@ import Image from "next/image";
 import { FormEvent, useEffect, useRef, useState } from "react";
 
 import type { ChatMessage } from "@/types/chat";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 type ChatPanelProps = {
   open: boolean;
@@ -64,6 +65,7 @@ export default function ChatPanel({
 }: ChatPanelProps) {
   const [input, setInput] = useState("");
   const bottomRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (!open) return;
@@ -107,7 +109,7 @@ export default function ChatPanel({
               <div>
                 <p className="font-semibold leading-tight">Tsolmon</p>
                 <p className="text-xs text-muted-foreground">
-                  Junior Software Engineer
+                  {t("chat.role")}
                 </p>
               </div>
             </div>
@@ -115,7 +117,7 @@ export default function ChatPanel({
               <button
                 type="button"
                 onClick={onReset}
-                aria-label="New chat"
+                aria-label={t("chat.newChat")}
                 className="flex size-10 items-center justify-center rounded-full border border-neutral-200 bg-white/70 text-neutral-600 transition-colors hover:bg-neutral-100"
               >
                 <RotateCcw className="size-4" />
@@ -123,7 +125,7 @@ export default function ChatPanel({
               <button
                 type="button"
                 onClick={onClose}
-                aria-label="Close chat"
+                aria-label={t("chat.close")}
                 className="flex size-10 items-center justify-center rounded-full border border-neutral-200 bg-white/70 text-neutral-600 transition-colors hover:bg-neutral-100"
               >
                 <X className="size-5" />
@@ -182,14 +184,14 @@ export default function ChatPanel({
                   type="text"
                   value={input}
                   onChange={(event) => setInput(event.target.value)}
-                  placeholder="Ask me anything…"
+                  placeholder={t("chat.ask")}
                   disabled={loading}
                   className="w-full border-none bg-transparent text-base text-neutral-800 placeholder:text-neutral-500 focus:outline-none disabled:opacity-60"
                 />
                 <button
                   type="submit"
                   disabled={!input.trim() || loading}
-                  aria-label="Send"
+                  aria-label={t("chat.send")}
                   className="flex items-center justify-center rounded-full bg-primary p-2.5 text-white transition-colors hover:bg-[#015bb8] disabled:opacity-70"
                 >
                   <ArrowRight className="h-5 w-5" />

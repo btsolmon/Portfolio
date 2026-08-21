@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Anton, Geist, Geist_Mono, Roboto_Flex } from "next/font/google";
+import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -34,7 +35,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${robotoFlex.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-white text-foreground">{children}</body>
+      <body className="min-h-full bg-white text-foreground">
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }

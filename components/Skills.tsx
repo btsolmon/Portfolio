@@ -6,11 +6,14 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import type { TranslationKey } from "@/lib/i18n/translations";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function Skills() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useGSAP(
     () => {
@@ -58,14 +61,14 @@ export default function Skills() {
   return (
     <section id="my-stack" className="relative z-10" ref={containerRef}>
       <div className="mx-auto max-w-[1148px] px-4">
-        <SectionTitle title="My Stack" />
+        <SectionTitle title={t("stack.title")} />
 
         <div className="space-y-20">
           {Object.entries(MY_STACK).map(([key, value]) => (
               <div className="grid gap-[25px] sm:grid-cols-12" key={key}>
               <div className="sm:col-span-5">
                 <p className="slide-up font-anton text-5xl leading-none text-muted-foreground uppercase">
-                  {key}
+                  {t(`stack.${key}` as TranslationKey)}
                 </p>
               </div>
               <div className="flex flex-wrap gap-x-11 gap-y-9 sm:col-span-7">
