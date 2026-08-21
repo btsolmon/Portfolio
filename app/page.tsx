@@ -1,0 +1,41 @@
+"use client";
+
+import AboutMe from "@/components/AboutMe";
+import ChatPanel from "@/components/ChatPanel";
+import Experiences from "@/components/Experiences";
+import FluidCursor from "@/components/FluidCursor";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+import ProjectList from "@/components/ProjectList";
+import Skills from "@/components/Skills";
+import StickyEmail from "@/components/StickyEmail";
+import { usePortfolioChat } from "@/hooks/usePortfolioChat";
+
+export default function Home() {
+  const chat = usePortfolioChat();
+
+  return (
+    <>
+      <FluidCursor />
+      <Navbar />
+      <main className="relative z-10">
+        <Hero onAsk={chat.send} asking={chat.loading} />
+        <AboutMe />
+        <Skills />
+        <Experiences />
+        <ProjectList />
+      </main>
+      <Footer />
+      <StickyEmail />
+      <ChatPanel
+        open={chat.open}
+        messages={chat.messages}
+        loading={chat.loading}
+        onSend={chat.send}
+        onClose={chat.close}
+        onReset={chat.reset}
+      />
+    </>
+  );
+}

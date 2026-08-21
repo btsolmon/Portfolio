@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --background-light: #f3f3f3;
+  --foreground: #171717;
+  --primary: #0171e3;
+  --muted-foreground: #6b6b6b;
+  --border: #e5e5e5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-light: var(--background-light);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --font-sans: var(--font-roboto), var(--font-geist-sans), Arial, Helvetica,
+    sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --font-anton: var(--font-anton-display), Impact, sans-serif;
+  --font-roboto-flex: var(--font-roboto), sans-serif;
+  --spacing-section: 9rem;
+  --breakpoint-xs: 26.25rem;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: var(--foreground);
+  font-family: var(--font-roboto), var(--font-geist-sans), Arial, Helvetica,
+    sans-serif;
+}
+
+#fluid {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+.font-anton {
+  font-family: var(--font-anton);
+}

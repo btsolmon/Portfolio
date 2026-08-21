@@ -1,0 +1,40 @@
+import type { Metadata } from "next";
+import { Anton, Geist, Geist_Mono, Roboto_Flex } from "next/font/google";
+import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const anton = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-anton-display",
+});
+
+const robotoFlex = Roboto_Flex({
+  subsets: ["latin"],
+  variable: "--font-roboto",
+});
+
+export const metadata: Metadata = {
+  title: "Tsolmon — Junior Software Engineer",
+  description: "Personal portfolio of Tsolmon",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${robotoFlex.variable} h-full antialiased`}
+    >
+      <body className="min-h-full bg-white text-foreground">{children}</body>
+    </html>
+  );
+}
