@@ -69,16 +69,15 @@ export default function AboutMe() {
           <div className="md:col-span-7">
             <div className="max-w-[450px] text-lg text-muted-foreground">
               <p className="slide-up-and-fade">
-                I&apos;m a junior software engineer dedicated to turning ideas
-                into creative solutions. I specialize in creating seamless and
-                intuitive user experiences.
+                I&apos;m Tsolmon — friends also call me Tsoomoo. I&apos;m a
+                junior software engineer from Ulaanbaatar. I loved computers as
+                a kid, then studied law in Moscow, and now I&apos;m at Pinecone
+                Academy, graduating this October.
               </p>
               <p className="slide-up-and-fade mt-3">
-                My approach focuses on creating scalable, high-performing
-                solutions tailored to both user needs and business objectives.
-                By prioritizing performance, accessibility, and responsiveness,
-                I strive to deliver experiences that not only engage users but
-                also drive tangible results.
+                I build full-stack web apps with a user-centered approach:
+                performance, accessibility, and a clean experience. Nuudelchin
+                and Buy Me Coffee were team projects; the rest I shipped myself.
               </p>
             </div>
           </div>

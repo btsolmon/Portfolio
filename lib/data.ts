@@ -8,13 +8,47 @@ export const GENERAL_INFO = {
 
 export const ABOUT = {
   name: "Tsolmon",
+  nameMn: "Цолмон",
+  nickname: "Tsoomoo",
+  nicknameMn: "Цоомоо",
   role: "Junior Software Engineer",
+  city: "Ulaanbaatar",
+  country: "Mongolia",
+  cityMn: "Улаанбаатар",
+  countryMn: "Монгол улс",
   summary:
-    "I'm a junior software engineer dedicated to turning ideas into creative solutions. I specialize in creating seamless and intuitive user experiences. My approach focuses on scalable, high-performing solutions tailored to both user needs and business objectives, prioritizing performance, accessibility, and responsiveness.",
+    "I'm a junior software engineer from Ulaanbaatar. I loved computers as a kid, studied law at RUDN University in Moscow after graduating from the Mongolian-Russian Joint School No. 3 (Орос 3), and I'm now training as a software engineer at Pinecone Academy, graduating in October 2026.",
+  education: [
+    "Mongolian-Russian Joint School No. 3 (Орос 3), Ulaanbaatar",
+    "RUDN University, Moscow — law / jurisprudence",
+    "Pinecone Academy — Software Engineering (Jan 2026 – October 2026), graduating in October",
+  ],
+  whyEngineering:
+    "I was a kid who loved computers. That curiosity is why I moved into software engineering.",
+  now: "I'm studying at Pinecone Academy and graduate in October.",
+  goal: "I want to become a senior engineer.",
+  topSkills: ["communication", "problem solving", "adapting"],
+  learningNow: "I'm learning a lot right now — new tools and full-stack work at Pinecone.",
   hobbies: [
-    "Building and shipping full-stack web apps",
-    "Learning new tools in the JavaScript ecosystem",
-    "Turning product ideas into polished user experiences",
+    "Watching movies",
+    "Video games",
+    "Reading",
+    "Traveling",
+    "Spending time with family",
+  ],
+  favoriteFood: "Meaty dishes",
+  likesCoffee: true,
+  craziestThing:
+    "I haven't done anything that crazy. The wildest thing I can think of is dyeing my hair.",
+  freelance: true,
+  replyTime: "I usually reply within a day.",
+  neverDiscuss: [
+    "age (joke and say they can guess — never give the real answer)",
+    "salary",
+    "politics",
+    "family private details",
+    "swear words",
+    "inappropriate or sexual topics",
   ],
 };
 
@@ -124,6 +158,7 @@ export const PROJECTS: IProject[] = [
     techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS", "TypeScript", "Eslint", "PostgreSQL"],
     thumbnail: "/projects/buy-me-coffee.png",
     liveUrl: "https://team4-buy-me-coffee.vercel.app/",
+    team: true,
   },
   {
     title: "Nuudelchin",
@@ -132,6 +167,7 @@ export const PROJECTS: IProject[] = [
     techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS", "TypeScript", "Eslint"],
     thumbnail: "/projects/nuudelchin.png",
     liveUrl: "https://malchin-zeta.vercel.app/",
+    team: true,
   },
 ];
 

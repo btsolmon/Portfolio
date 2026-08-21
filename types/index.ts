@@ -18,4 +18,5 @@ export interface IProject {
   thumbnail: string;
   liveUrl?: string;
   sourceCode?: string;
+  team?: boolean;
 }
