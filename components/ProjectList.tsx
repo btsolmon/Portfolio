@@ -100,7 +100,7 @@ export default function ProjectList() {
         <div className="group/projects relative" ref={containerRef}>
           {selectedProject !== null && (
             <div
-              className="pointer-events-none absolute top-0 right-0 z-[1] aspect-video w-[320px] overflow-hidden rounded-md bg-white/80 opacity-0 shadow-lg max-md:hidden xl:w-[480px]"
+              className="pointer-events-none absolute top-0 right-0 z-[1] aspect-video w-[320px] overflow-hidden rounded-md bg-background/80 opacity-0 shadow-lg max-md:hidden xl:w-[480px]"
               ref={imageContainer}
             >
               {PROJECTS.map((project) => (

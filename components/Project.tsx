@@ -76,7 +76,7 @@ export default function Project({
           alt={project.title}
           width={1280}
           height={720}
-          className="mb-6 aspect-video w-full bg-neutral-100 object-contain"
+          className="mb-6 aspect-video w-full bg-background-light object-contain"
           loading="lazy"
         />
       )}

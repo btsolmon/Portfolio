@@ -10,6 +10,10 @@ export const translations = {
       mn: "MN",
       en: "EN",
     },
+    theme: {
+      toDark: "Switch to dark mode",
+      toLight: "Switch to light mode",
+    },
     nav: {
       menu: "Menu",
       close: "Close menu",
@@ -106,6 +110,10 @@ export const translations = {
       mn: "MN",
       en: "EN",
     },
+    theme: {
+      toDark: "Харанхуй горим руу шилжих",
+      toLight: "Цайвар горим руу шилжих",
+    },
     nav: {
       menu: "Цэс",
       close: "Цэс хаах",
@@ -199,6 +207,8 @@ export type TranslationKey =
   | "lang.switch"
   | "lang.mn"
   | "lang.en"
+  | "theme.toDark"
+  | "theme.toLight"
   | "nav.menu"
   | "nav.close"
   | "nav.social"

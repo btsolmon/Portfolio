@@ -9,7 +9,7 @@ export default function LanguageToggle({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex items-center rounded-full border border-neutral-200 bg-white/70 p-1 text-xs font-semibold tracking-wide backdrop-blur-md",
+        "flex items-center rounded-full border border-border bg-background/70 p-1 text-xs font-semibold tracking-wide backdrop-blur-md",
         className,
       )}
       role="group"

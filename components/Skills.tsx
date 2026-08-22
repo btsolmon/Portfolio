@@ -82,7 +82,7 @@ export default function Skills() {
                       alt={item.name}
                       width={40}
                       height={40}
-                      className="max-h-10 w-auto"
+                      className={`max-h-10 w-auto${item.name === "Prisma" || item.name === "Docker" ? " dark:invert" : ""}`}
                     />
                     <span className="text-2xl capitalize">{item.name}</span>
                   </div>

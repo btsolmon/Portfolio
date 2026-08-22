@@ -8,9 +8,9 @@ export default function FollowMe() {
   const { t } = useLanguage();
 
   return (
-    <div className="relative z-10 mt-20 bg-neutral-950/20 py-16 text-white">
+    <div className="relative z-10 mt-20 bg-foreground/10 py-16 text-foreground">
       <div className="mx-auto flex max-w-[1148px] flex-col items-center px-4">
-        <p className="text-sm font-medium tracking-[0.42em] drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
+        <p className="text-sm font-medium tracking-[0.42em]">
           {t("footer.follow")}
         </p>
         <ul className="mt-7 flex items-center gap-6 sm:gap-8">
@@ -21,7 +21,7 @@ export default function FollowMe() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={link.label}
-                className="inline-flex text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:scale-110 hover:text-primary"
+                className="inline-flex text-foreground transition-transform duration-200 hover:scale-110 hover:text-primary"
               >
                 <SocialIcon name={link.name} className="size-[22px] sm:size-6" />
               </a>

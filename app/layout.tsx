@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Anton, Geist, Geist_Mono, Roboto_Flex } from "next/font/google";
 import { LanguageProvider } from "@/lib/language/LanguageProvider";
 import { translations } from "@/lib/language/translations";
+import { ThemeProvider } from "@/lib/theme/ThemeProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -35,13 +36,23 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${robotoFlex.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full bg-white text-foreground">
-        <LanguageProvider
-          key={`${translations.en.about.hi}|${translations.mn.about.hi}|${translations.mn.hero.ask}|${translations.mn.about.p2}`}
-        >
-          {children}
-        </LanguageProvider>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("portfolio-theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}`,
+          }}
+        />
+      </head>
+      <body className="min-h-full bg-background text-foreground">
+        <ThemeProvider>
+          <LanguageProvider
+            key={`${translations.en.about.hi}|${translations.mn.about.hi}|${translations.mn.hero.ask}|${translations.mn.about.p2}`}
+          >
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

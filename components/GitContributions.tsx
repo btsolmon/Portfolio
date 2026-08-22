@@ -19,7 +19,7 @@ type ApiResponse = {
 };
 
 const LEVEL_CLASS = [
-  "bg-[#ebedf0]",
+  "bg-[var(--contrib-empty)]",
   "bg-[#9ecbff]",
   "bg-[#4da3f0]",
   "bg-primary",
@@ -143,7 +143,7 @@ export default function GitContributions() {
           </a>
         </div>
 
-        <div className="overflow-x-auto rounded-2xl border border-border bg-white/60 p-4 backdrop-blur-lg sm:p-6">
+        <div className="overflow-x-auto rounded-2xl border border-border bg-background/60 p-4 backdrop-blur-lg sm:p-6">
           {weeks.length ? (
             <div className="flex min-w-[720px] justify-center">
               <div className="mr-1.5 flex w-8 shrink-0 flex-col">

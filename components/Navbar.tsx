@@ -5,6 +5,7 @@ import { useState } from "react";
 import { MoveUpRight } from "lucide-react";
 import { GENERAL_INFO, SOCIAL_LINKS } from "@/lib/data";
 import LanguageToggle from "@/components/LanguageToggle";
+import ThemeToggle from "@/components/ThemeToggle";
 import { useLanguage } from "@/lib/language/LanguageProvider";
 import type { TranslationKey } from "@/lib/language/translations";
 
@@ -37,7 +38,10 @@ export default function Navbar() {
   return (
     <>
       <div className="sticky top-0 z-40">
-        <LanguageToggle className="absolute top-5 left-5 z-[2] md:left-10" />
+        <div className="absolute top-5 left-5 z-[2] flex items-center gap-2 md:left-10">
+          <LanguageToggle />
+          <ThemeToggle />
+        </div>
         <button
           className="group absolute top-5 right-5 z-[2] size-12 md:right-10"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -74,7 +78,7 @@ export default function Navbar() {
       >
         <div
           className={cn(
-            "fixed inset-0 z-[-1] scale-150 translate-x-1/2 rounded-[50%] bg-white duration-700 delay-150",
+            "fixed inset-0 z-[-1] scale-150 translate-x-1/2 rounded-[50%] bg-background duration-700 delay-150",
             { "translate-x-0": isMenuOpen },
           )}
         />

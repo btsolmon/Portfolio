@@ -92,7 +92,7 @@ export default function ChatPanel({
     <AnimatePresence>
       {open ? (
         <motion.div
-          className="fixed inset-0 z-50 flex flex-col bg-white/80 backdrop-blur-xl"
+          className="fixed inset-0 z-50 flex flex-col bg-background/80 backdrop-blur-xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -119,7 +119,7 @@ export default function ChatPanel({
                 type="button"
                 onClick={onReset}
                 aria-label={t("chat.newChat")}
-                className="flex size-10 items-center justify-center rounded-full border border-neutral-200 bg-white/70 text-neutral-600 transition-colors hover:bg-neutral-100"
+                className="flex size-10 items-center justify-center rounded-full border border-border bg-background/70 text-muted-foreground transition-colors hover:bg-foreground/5"
               >
                 <RotateCcw className="size-4" />
               </button>
@@ -127,7 +127,7 @@ export default function ChatPanel({
                 type="button"
                 onClick={onClose}
                 aria-label={t("chat.close")}
-                className="flex size-10 items-center justify-center rounded-full border border-neutral-200 bg-white/70 text-neutral-600 transition-colors hover:bg-neutral-100"
+                className="flex size-10 items-center justify-center rounded-full border border-border bg-background/70 text-muted-foreground transition-colors hover:bg-foreground/5"
               >
                 <X className="size-5" />
               </button>
@@ -159,7 +159,7 @@ export default function ChatPanel({
                     className={
                       message.role === "user"
                         ? "rounded-2xl rounded-br-md bg-primary px-4 py-2.5 text-sm text-white"
-                        : "rounded-2xl rounded-bl-md border border-neutral-200 bg-white/80 px-4 py-2.5 text-sm text-neutral-800"
+                        : "rounded-2xl rounded-bl-md border border-border bg-background/80 px-4 py-2.5 text-sm text-foreground"
                     }
                   >
                     {message.role === "assistant" &&
@@ -167,9 +167,9 @@ export default function ChatPanel({
                     loading &&
                     index === messages.length - 1 ? (
                       <span className="inline-flex gap-1 py-1">
-                        <span className="size-1.5 animate-bounce rounded-full bg-neutral-400 [animation-delay:-0.2s]" />
-                        <span className="size-1.5 animate-bounce rounded-full bg-neutral-400 [animation-delay:-0.1s]" />
-                        <span className="size-1.5 animate-bounce rounded-full bg-neutral-400" />
+                        <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.2s]" />
+                        <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground [animation-delay:-0.1s]" />
+                        <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" />
                       </span>
                     ) : (
                       <MessageText text={message.content} />
@@ -181,14 +181,14 @@ export default function ChatPanel({
             </div>
 
             <form onSubmit={submit} className="mt-4">
-              <div className="flex items-center rounded-full border border-neutral-200 bg-white/70 py-2.5 pr-2 pl-6 backdrop-blur-lg">
+              <div className="flex items-center rounded-full border border-border bg-background/70 py-2.5 pr-2 pl-6 backdrop-blur-lg">
                 <input
                   type="text"
                   value={input}
                   onChange={(event) => setInput(event.target.value)}
                   placeholder={t("chat.ask")}
                   disabled={loading}
-                  className="w-full border-none bg-transparent text-base text-neutral-800 placeholder:text-neutral-500 focus:outline-none disabled:opacity-60"
+                  className="w-full border-none bg-transparent text-base text-foreground placeholder:text-muted-foreground focus:outline-none disabled:opacity-60"
                 />
                 <button
                   type="submit"

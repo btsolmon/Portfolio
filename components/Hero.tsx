@@ -77,10 +77,10 @@ export default function Hero({ onAsk, asking }: HeroProps) {
         initial="hidden"
         animate="visible"
       >
-        <h2 className="mt-1 text-xl font-semibold text-neutral-600 md:text-2xl">
+        <h2 className="mt-1 text-xl font-semibold text-muted-foreground md:text-2xl">
           {t("hero.hey")}
         </h2>
-        <h1 className="text-4xl font-bold tracking-tight text-neutral-950 sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
           {t("hero.role")}
         </h1>
       </motion.div>
@@ -111,13 +111,13 @@ export default function Hero({ onAsk, asking }: HeroProps) {
           }}
           className="relative w-full max-w-lg"
         >
-          <div className="mx-auto flex items-center rounded-full border border-neutral-200 bg-white/30 py-2.5 pr-2 pl-6 backdrop-blur-lg transition-all hover:border-neutral-300">
+          <div className="mx-auto flex items-center rounded-full border border-border bg-background/30 py-2.5 pr-2 pl-6 backdrop-blur-lg transition-all hover:border-foreground/20">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder={t("hero.ask")}
-              className="w-full border-none bg-transparent text-base text-neutral-800 placeholder:text-neutral-500 focus:outline-none"
+              className="w-full border-none bg-transparent text-base text-foreground placeholder:text-muted-foreground focus:outline-none"
             />
             <button
               type="submit"
@@ -137,9 +137,9 @@ export default function Hero({ onAsk, asking }: HeroProps) {
               type="button"
               disabled={asking}
               onClick={() => ask(t(question))}
-              className="aspect-square w-full cursor-pointer rounded-2xl border border-neutral-200 bg-white/30 py-8 shadow-none backdrop-blur-lg transition-transform hover:bg-neutral-100/50 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 md:p-10"
+              className="aspect-square w-full cursor-pointer rounded-2xl border border-border bg-background/30 py-8 shadow-none backdrop-blur-lg transition-transform hover:bg-foreground/5 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 md:p-10"
             >
-              <div className="flex h-full flex-col items-center justify-center gap-1 text-gray-700">
+              <div className="flex h-full flex-col items-center justify-center gap-1 text-foreground/80">
                 <Icon size={22} strokeWidth={2} color={color} />
                 <span className="text-xs font-medium sm:text-sm">{t(label)}</span>
               </div>
