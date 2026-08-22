@@ -14,7 +14,7 @@ import {
   translate,
   type Locale,
   type TranslationKey,
-} from "@/lib/i18n/translations";
+} from "@/lib/language/translations";
 
 const STORAGE_KEY = "portfolio-lang";
 

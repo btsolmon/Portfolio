@@ -13,9 +13,6 @@
 # testing
 /coverage
 
-# leftover nested create-next-app
-/portfolio
-
 # next.js
 /.next/
 /out/

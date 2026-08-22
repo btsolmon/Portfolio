@@ -3,7 +3,7 @@ import { IProject } from "@/types";
 export const GENERAL_INFO = {
   email: "btsolmon.mn@gmail.com",
   emailSubject: "Let's collaborate on a project",
-  emailBody: "Hi Tsolmon, I am reaching out to you because...",
+  emailBody: "Hi Tsolmon, I'm reaching out because...",
 };
 
 export const ABOUT = {
@@ -21,13 +21,13 @@ export const ABOUT = {
   education: [
     "Mongolian-Russian Joint School No. 3 (Орос 3), Ulaanbaatar",
     "RUDN University, Moscow — law / jurisprudence",
-    "Pinecone Academy — Software Engineering (Jan 2026 – October 2026), graduating in October",
+    "Pinecone Academy — Software Engineering (Jan 2026 – Oct 2026)",
   ],
   whyEngineering:
     "I was a kid who loved computers. That curiosity is why I moved into software engineering.",
-  now: "I'm studying at Pinecone Academy and graduate in October.",
+  now: "I'm studying at Pinecone Academy and I'll graduate in October.",
   goal: "I want to become a senior engineer.",
-  topSkills: ["communication", "problem solving", "adapting"],
+  topSkills: ["communication", "problem solving", "adaptability"],
   learningNow: "I'm learning a lot right now — new tools and full-stack work at Pinecone.",
   hobbies: [
     "Watching movies",
@@ -36,7 +36,7 @@ export const ABOUT = {
     "Traveling",
     "Spending time with family",
   ],
-  favoriteFood: "Meaty dishes",
+  favoriteFood: "Meat dishes",
   likesCoffee: true,
   craziestThing:
     "I haven't done anything that crazy. The wildest thing I can think of is dyeing my hair.",
@@ -77,7 +77,7 @@ export const MY_STACK = {
     { name: "MySQL", icon: "/logo/mysql.svg" },
     { name: "PostgreSQL", icon: "/logo/postgreSQL.png" },
     { name: "MongoDB", icon: "/logo/mongodb.svg" },
-    { name: "Prisma", icon: "/logo/prisma.png" },
+    { name: "Prisma", icon: "/logo/prisma.svg" },
   ],
   tools: [
     { name: "Git", icon: "/logo/git.png" },
@@ -175,6 +175,6 @@ export const MY_EXPERIENCE = [
   {
     title: "Software Engineering Student",
     company: "Pinecone Academy",
-    duration: "Jan 2026 - October 2026",
+    duration: "Jan 2026 – Oct 2026",
   },
 ];

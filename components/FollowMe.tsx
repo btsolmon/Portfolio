@@ -2,7 +2,7 @@
 
 import { SocialIcon } from "@/components/icons/SocialIcons";
 import { SOCIAL_LINKS } from "@/lib/data";
-import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import { useLanguage } from "@/lib/language/LanguageProvider";
 
 export default function FollowMe() {
   const { t } = useLanguage();

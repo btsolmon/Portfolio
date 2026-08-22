@@ -32,7 +32,7 @@ export const translations = {
       projects: "Projects",
       fun: "Fun",
       contact: "Contact",
-      qMe: "Would like to know more about you.",
+      qMe: "I'd like to know more about you.",
       qProjects: "What are your projects? What are you working on right now?",
       qSkills: "What are your skills? Give me a list of your soft and hard skills.",
       qFun: "What's the craziest thing you've ever done? What are your hobbies?",
@@ -40,11 +40,11 @@ export const translations = {
     },
     about: {
       belief:
-        "I prioritize user needs and strive to craft every project to perfectly align with their real-world requirements.",
+        "I put users first and shape every project around what they actually need.",
       label: "About Me.",
       hi: "Hi, I'm Tsolmon.",
-      p1: "I'm Tsolmon, a software engineering student based in Ulaanbaatar. Though I originally studied law in Moscow, I decided to follow my lifelong passion for technology and pivot my career. I am currently honing my skills at Pinecone Academy, with my graduation set for this October.",
-      p2: "I am a full-stack developer. My 3 guiding principles are to make everything fast, accessible, and easy to use.",
+      p1: "I'm Tsolmon, a software engineering student in Ulaanbaatar. I studied law in Moscow, then followed a lifelong love of computers and changed path. I'm now at Pinecone Academy, graduating this October.",
+      p2: "I'm a full-stack developer. My three principles are to make things fast, accessible, and easy to use.",
     },
     stack: {
       title: "My Stack",
@@ -56,7 +56,7 @@ export const translations = {
     experience: {
       title: "My Experience",
       role: "Software Engineering Student",
-      duration: "Jan 2026 – October 2026",
+      duration: "Jan 2026 – Oct 2026",
     },
     projects: {
       title: "Selected Projects",
@@ -99,7 +99,7 @@ export const translations = {
   },
   mn: {
     meta: {
-      title: "Цолмон — Джуниор програм хангамжийн инженер",
+      title: "Цолмон — Програм хангамжийн инженер",
     },
     lang: {
       switch: "Хэл солих",
@@ -119,31 +119,31 @@ export const translations = {
       github: "GitHub",
     },
     hero: {
-      hey: "Сайн уу, Цолмон байна 👋",
+      hey: "Сайн уу, би Цолмон 👋",
       role: "Програм хангамжийн инженер",
-      ask: "Надаас асуугаарай…",
+      ask: "Надаас юу ч асуугаарай…",
       submit: "Асуулт илгээх",
       me: "Би",
-      skills: "Чадварууд",
+      skills: "Чадвар",
       projects: "Төслүүд",
-      fun: "Хөгжилтэй",
+      fun: "Хобби",
       contact: "Холбогдох",
-      qMe: "Таны тухай илүү мэдмээр байна.",
-      qProjects: "Ямар төслүүд хийсэн бэ? Одоо юун дээр ажиллаж байна?",
-      qSkills: "Ямар ур чадвартай вэ? Soft болон hard skill-ээ хэлээч.",
-      qFun: "Хамгийн галзуу хийсэн зүйл чинь юу вэ? Хобби чинь юу вэ?",
+      qMe: "Таны тухай илүү ихийг мэдмээр байна.",
+      qProjects: "Ямар төслүүд хийсэн бэ? Одоо юу дээр ажиллаж байна?",
+      qSkills: "Ямар ур чадвартай вэ? Soft болон hard skill-үүдээ хэлээч.",
+      qFun: "Хийж байсан хамгийн сонин зүйл чинь юу вэ? Хобби чинь юу вэ?",
       qContact: "Таньтай яаж холбогдох вэ?",
     },
     about: {
       belief:
-        "Би хэрэглэгчийн хүсэл сонирхлыг нэн тэргүүнд тавьж, төсөл бүрээ тэдний бодит хэрэгцээ шаардлагад бүрэн нийцүүлэн урлахыг зорьдог.",
+        "Би хэрэглэгчийг нэн тэргүүнд тавьж, төсөл бүрээ тэдний бодит хэрэгцээнд нийцүүлэн бүтээдэг.",
       label: "Миний тухай.",
-      hi: "Сайн уу, Цолмон байна.",
-      p1: "Намайг Цолмон гэдэг. Улаанбаатар хотод амьдардаг, програм хангамжийн инженер чиглэлээр суралцаж буй хөгжүүлэгч байна. Москвад хуулийн чиглэлээр суралцсан ч багаасаа л компьютерт хоббитой байсан хүсэл сонирхлоо хөөн амьдралдаа эргэлт хийж, одоо Pinecone Academy-д програм хангамжийн инженерээр суралцаж байна. Энэ оны 10 дугаар сард төгснө.",
-      p2: "Би Full-stack хөгжүүлэлэгч. Миний баримталдаг 3 зарчим бол: Хурдан, хүртээмжтэй, хэрэглэхэд хялбар байх."
+      hi: "Сайн уу, би Цолмон.",
+      p1: "Намайг Цолмон гэдэг. Улаанбаатарт амьдардаг, програм хангамжийн инженерээр суралцаж буй хөгжүүлэгч. Москвад хуулийн чиглэлээр сурч байсан ч багаасаа компьютерт дуртай байсан тул мэргэжлээ сольсон. Одоо Pinecone Academy-д суралцаж байгаа бөгөөд энэ оны 10 дугаар сард төгсөнө.",
+      p2: "Би full-stack хөгжүүлэгч. Миний гурван зарчим: хурдан, хүртээмжтэй, хэрэглэхэд хялбар."
     },
     stack: {
-      title: "Миний Стэк",
+      title: "Миний стек",
       frontend: "Фронтенд",
       backend: "Бекенд",
       database: "Өгөгдлийн сан",
@@ -151,17 +151,17 @@ export const translations = {
     },
     experience: {
       title: "Миний туршлага",
-      role: "Програм хангамжийн инженерээр суралцагч",
-      duration: "2026 оны 1-р сар – 2026 оны 10-р сар",
+      role: "Програм хангамжийн инженер мэргэжлээр суралцагч",
+      duration: "2026 оны 1–10 дугаар сар",
     },
     projects: {
       title: "Миний төслүүд",
     },
     github: {
       title: "GitHub",
-      loading: "Контрибьюшн ачааллаж байна…",
+      loading: "Хувь нэмрийг ачааллаж байна…",
       error: "Графикийг одоогоор ачаалж чадсангүй.",
-      count: "Сүүлийн жилд {n} контрибьюшн",
+      count: "Сүүлийн жилд {n} хувь нэмэр",
       profile: "Профайл харах →",
       less: "Бага",
       more: "Их",
@@ -190,7 +190,7 @@ export const translations = {
       newChat: "Шинэ чат",
       close: "Чат хаах",
       send: "Илгээх",
-      ask: "Надаас асуугаарай…",
+      ask: "Надаас юу ч асуугаарай…",
     },
   },
 } as const;

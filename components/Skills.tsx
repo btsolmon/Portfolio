@@ -6,8 +6,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
-import { useLanguage } from "@/lib/i18n/LanguageProvider";
-import type { TranslationKey } from "@/lib/i18n/translations";
+import { useLanguage } from "@/lib/language/LanguageProvider";
+import type { TranslationKey } from "@/lib/language/translations";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 

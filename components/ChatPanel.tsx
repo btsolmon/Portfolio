@@ -6,7 +6,7 @@ import Image from "next/image";
 import { FormEvent, useEffect, useRef, useState } from "react";
 
 import type { ChatMessage } from "@/types/chat";
-import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import { useLanguage } from "@/lib/language/LanguageProvider";
 
 type ChatPanelProps = {
   open: boolean;
@@ -100,10 +100,11 @@ export default function ChatPanel({
           <header className="mx-auto flex w-full max-w-2xl items-center justify-between px-4 py-5">
             <div className="flex items-center gap-3">
               <Image
-                src="/hero.png"
+                src="/hero.png?v=nogra"
                 alt="Tsolmon"
                 width={40}
                 height={40}
+                unoptimized
                 className="size-10 rounded-full object-cover object-top"
               />
               <div>
@@ -146,10 +147,11 @@ export default function ChatPanel({
                 >
                   {message.role === "assistant" ? (
                     <Image
-                      src="/hero.png"
+                      src="/hero.png?v=nogra"
                       alt=""
                       width={28}
                       height={28}
+                      unoptimized
                       className="mt-1 size-7 shrink-0 rounded-full object-cover object-top"
                     />
                   ) : null}

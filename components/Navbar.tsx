@@ -5,8 +5,8 @@ import { useState } from "react";
 import { MoveUpRight } from "lucide-react";
 import { GENERAL_INFO, SOCIAL_LINKS } from "@/lib/data";
 import LanguageToggle from "@/components/LanguageToggle";
-import { useLanguage } from "@/lib/i18n/LanguageProvider";
-import type { TranslationKey } from "@/lib/i18n/translations";
+import { useLanguage } from "@/lib/language/LanguageProvider";
+import type { TranslationKey } from "@/lib/language/translations";
 
 const COLORS = [
   "bg-yellow-500 text-black",

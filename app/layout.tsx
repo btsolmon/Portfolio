@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Anton, Geist, Geist_Mono, Roboto_Flex } from "next/font/google";
-import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
+import { LanguageProvider } from "@/lib/language/LanguageProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,7 +26,7 @@ const robotoFlex = Roboto_Flex({
 
 export const metadata: Metadata = {
   title: "Tsolmon — Junior Software Engineer",
-  description: "Personal portfolio of Tsolmon",
+  description: "Portfolio of Tsolmon, a junior software engineer in Ulaanbaatar.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

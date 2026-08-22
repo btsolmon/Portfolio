@@ -9,7 +9,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import { MouseEvent, useRef, useState } from "react";
-import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import { useLanguage } from "@/lib/language/LanguageProvider";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 

@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import { useLanguage } from "@/lib/language/LanguageProvider";
 
 const questionConfig = [
   { key: "Me", color: "#329696", icon: Laugh, label: "hero.me", question: "hero.qMe" },
@@ -86,12 +86,13 @@ export default function Hero({ onAsk, asking }: HeroProps) {
       <div className="relative z-10 flex w-full flex-col items-center">
         <div className="relative z-0 flex h-72 w-56 items-end justify-center sm:h-[26rem] sm:w-80 lg:h-[28rem] lg:w-[22rem]">
           <Image
-            src="/hero.png"
+            src="/hero.png?v=nogra"
             alt="Tsolmon"
-            width={644}
-            height={955}
+            width={1326}
+            height={1981}
             priority
-            className="pointer-events-none h-full w-auto select-none object-contain object-bottom drop-shadow-[0_18px_35px_rgba(0,0,0,0.18)]"
+            unoptimized
+            className="pointer-events-none h-full w-auto max-h-full max-w-full select-none object-contain object-bottom drop-shadow-[0_18px_35px_rgba(0,0,0,0.18)]"
           />
         </div>
 

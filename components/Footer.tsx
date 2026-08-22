@@ -2,7 +2,7 @@
 
 import FollowMe from "@/components/FollowMe";
 import { GENERAL_INFO } from "@/lib/data";
-import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import { useLanguage } from "@/lib/language/LanguageProvider";
 
 export default function Footer() {
   const { t } = useLanguage();

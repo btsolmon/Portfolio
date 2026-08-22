@@ -4,8 +4,8 @@ import SectionTitle from "@/components/SectionTitle";
 import { GITHUB_USERNAME } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { useEffect, useMemo, useState } from "react";
-import { useLanguage } from "@/lib/i18n/LanguageProvider";
-import type { TranslationKey } from "@/lib/i18n/translations";
+import { useLanguage } from "@/lib/language/LanguageProvider";
+import type { TranslationKey } from "@/lib/language/translations";
 
 type Contribution = {
   date: string;

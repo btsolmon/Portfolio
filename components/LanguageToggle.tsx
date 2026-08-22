@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import { useLanguage } from "@/lib/language/LanguageProvider";
 
 export default function LanguageToggle({ className }: { className?: string }) {
   const { locale, setLocale, t } = useLanguage();
