@@ -5,12 +5,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import React from "react";
 import { useLanguage } from "@/lib/language/LanguageProvider";
+import { translations } from "@/lib/language/translations";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function AboutMe() {
   const container = React.useRef<HTMLDivElement>(null);
   const { t } = useLanguage();
+  void translations;
 
   useGSAP(
     () => {

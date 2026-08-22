@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Anton, Geist, Geist_Mono, Roboto_Flex } from "next/font/google";
 import { LanguageProvider } from "@/lib/language/LanguageProvider";
+import { translations } from "@/lib/language/translations";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,8 +26,8 @@ const robotoFlex = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
-  title: "Tsolmon — Junior Software Engineer",
-  description: "Portfolio of Tsolmon, a junior software engineer in Ulaanbaatar.",
+  title: translations.en.meta.title,
+  description: translations.en.about.p1,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -36,7 +37,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${robotoFlex.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-white text-foreground">
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider
+          key={`${translations.en.about.hi}|${translations.mn.about.hi}|${translations.mn.hero.ask}|${translations.mn.about.p2}`}
+        >
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -42,7 +42,7 @@ export const translations = {
       belief:
         "I put users first and shape every project around what they actually need.",
       label: "About Me.",
-      hi: "Hi, I'm Tsolmon.",
+      hi: "Hi!",
       p1: "I'm Tsolmon, a software engineering student in Ulaanbaatar. I studied law in Moscow, then followed a lifelong love of computers and changed path. I'm now at Pinecone Academy, graduating this October.",
       p2: "I'm a full-stack developer. My three principles are to make things fast, accessible, and easy to use.",
     },
@@ -119,9 +119,9 @@ export const translations = {
       github: "GitHub",
     },
     hero: {
-      hey: "Сайн уу, би Цолмон 👋",
+      hey: "Сайн уу, Цолмон байна 👋",
       role: "Програм хангамжийн инженер",
-      ask: "Надаас юу ч асуугаарай…",
+      ask: "Надаас юу ч асуусан болно…",
       submit: "Асуулт илгээх",
       me: "Би",
       skills: "Чадвар",
@@ -129,21 +129,21 @@ export const translations = {
       fun: "Хобби",
       contact: "Холбогдох",
       qMe: "Таны тухай илүү ихийг мэдмээр байна.",
-      qProjects: "Ямар төслүүд хийсэн бэ? Одоо юу дээр ажиллаж байна?",
+      qProjects: "Ямар төслүүд хийсэн бэ? Одоо юун дээр ажиллаж байна?",
       qSkills: "Ямар ур чадвартай вэ? Soft болон hard skill-үүдээ хэлээч.",
-      qFun: "Хийж байсан хамгийн сонин зүйл чинь юу вэ? Хобби чинь юу вэ?",
+      qFun: "Хийж байсан хамгийн галзуу зүйл чинь юу вэ? Хобби чинь юу вэ?",
       qContact: "Таньтай яаж холбогдох вэ?",
     },
     about: {
       belief:
         "Би хэрэглэгчийг нэн тэргүүнд тавьж, төсөл бүрээ тэдний бодит хэрэгцээнд нийцүүлэн бүтээдэг.",
       label: "Миний тухай.",
-      hi: "Сайн уу, би Цолмон.",
+      hi: "Сайн уу!",
       p1: "Намайг Цолмон гэдэг. Улаанбаатарт амьдардаг, програм хангамжийн инженерээр суралцаж буй хөгжүүлэгч. Москвад хуулийн чиглэлээр сурч байсан ч багаасаа компьютерт дуртай байсан тул мэргэжлээ сольсон. Одоо Pinecone Academy-д суралцаж байгаа бөгөөд энэ оны 10 дугаар сард төгсөнө.",
-      p2: "Би full-stack хөгжүүлэгч. Миний гурван зарчим: хурдан, хүртээмжтэй, хэрэглэхэд хялбар."
+      p2: "Би full-stack хөгжүүлэгч. Миний баримтладаг гурван зарчим бол аливааг хурдан, хүртээмжтэй, хэрэглэхэд хялбар болгох."
     },
     stack: {
-      title: "Миний стек",
+      title: "Миний Стэк",
       frontend: "Фронтенд",
       backend: "Бекенд",
       database: "Өгөгдлийн сан",
@@ -151,17 +151,17 @@ export const translations = {
     },
     experience: {
       title: "Миний туршлага",
-      role: "Програм хангамжийн инженер мэргэжлээр суралцагч",
-      duration: "2026 оны 1–10 дугаар сар",
+      role: "Програм хангамжийн инженерээр суралцагч",
+      duration: "2026 оны 1-р сар – 2026 оны 10-р сар",
     },
     projects: {
       title: "Миний төслүүд",
     },
     github: {
       title: "GitHub",
-      loading: "Хувь нэмрийг ачааллаж байна…",
+      loading: "Контрибьюшн ачааллаж байна…",
       error: "Графикийг одоогоор ачаалж чадсангүй.",
-      count: "Сүүлийн жилд {n} хувь нэмэр",
+      count: "Сүүлийн жилд {n} контрибьюшн",
       profile: "Профайл харах →",
       less: "Бага",
       more: "Их",
@@ -190,7 +190,7 @@ export const translations = {
       newChat: "Шинэ чат",
       close: "Чат хаах",
       send: "Илгээх",
-      ask: "Надаас юу ч асуугаарай…",
+      ask: "Надаас юу ч асуусан болно…",
     },
   },
 } as const;

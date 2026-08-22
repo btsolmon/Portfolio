@@ -12,6 +12,7 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 import { useLanguage } from "@/lib/language/LanguageProvider";
+import { translations } from "@/lib/language/translations";
 
 const questionConfig = [
   { key: "Me", color: "#329696", icon: Laugh, label: "hero.me", question: "hero.qMe" },
@@ -47,6 +48,7 @@ type HeroProps = {
 export default function Hero({ onAsk, asking }: HeroProps) {
   const [input, setInput] = useState("");
   const { t } = useLanguage();
+  void translations;
 
   const ask = (query: string) => {
     const q = query.trim();

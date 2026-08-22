@@ -12,6 +12,7 @@ import {
 
 import {
   translate,
+  translations,
   type Locale,
   type TranslationKey,
 } from "@/lib/language/translations";
@@ -46,7 +47,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const t = useCallback(
     (key: TranslationKey, vars?: Record<string, string | number>) =>
       translate(locale, key, vars),
-    [locale],
+    [locale, translations],
   );
 
   const value = useMemo(
@@ -64,5 +65,10 @@ export function useLanguage() {
   if (!context) {
     throw new Error("useLanguage must be used within LanguageProvider");
   }
-  return context;
+
+  const { locale, setLocale } = context;
+  const t = (key: TranslationKey, vars?: Record<string, string | number>) =>
+    translate(locale, key, vars);
+
+  return { locale, setLocale, t };
 }
