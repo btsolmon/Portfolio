@@ -70,16 +70,6 @@ export default function Project({
 
   const inner = (
     <>
-      {selectedProject === null && (
-        <Image
-          src={project.thumbnail}
-          alt={project.title}
-          width={1280}
-          height={720}
-          className="mb-6 aspect-video w-full bg-background-light object-contain"
-          loading="lazy"
-        />
-      )}
       <div className="flex gap-2 md:gap-5">
         <div className="font-anton text-muted-foreground">
           _{String(index + 1).padStart(2, "0")}.
@@ -126,11 +116,29 @@ export default function Project({
           ) : null}
         </div>
       </div>
+      <div
+        className={
+          selectedProject === project.slug
+            ? "mt-5 grid grid-rows-[1fr] transition-[grid-template-rows,margin] duration-500 ease-out md:hidden"
+            : "mt-0 grid grid-rows-[0fr] transition-[grid-template-rows,margin] duration-500 ease-out md:hidden"
+        }
+      >
+        <div className="min-h-0 overflow-hidden">
+          <Image
+            src={project.thumbnail}
+            alt={project.title}
+            width={1280}
+            height={720}
+            className="aspect-video w-full bg-background-light object-contain"
+            loading="lazy"
+          />
+        </div>
+      </div>
     </>
   );
 
   const className =
-    "project-item group block cursor-pointer py-5 leading-none transition-all first:!pt-0 last:border-none last:pb-0 md:border-b md:group-hover/projects:opacity-30 md:hover:!opacity-100";
+    "project-item group block cursor-pointer border-b py-5 leading-none transition-all first:!pt-0 last:border-none last:pb-0 md:group-hover/projects:opacity-30 md:hover:!opacity-100";
 
   if (project.liveUrl) {
     return (

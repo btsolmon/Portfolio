@@ -93,7 +93,7 @@ export const PROJECTS: IProject[] = [
     year: 2026,
     techStack: ["HTML", "CSS"],
     thumbnail: "/projects/pinetour.png",
-    liveUrl: "https://splendid-cassata-e84690.netlify.app/",
+    liveUrl: "https://pine-tour-ten.vercel.app/",
   },
   {
     title: "Apple Web",
@@ -101,7 +101,7 @@ export const PROJECTS: IProject[] = [
     year: 2026,
     techStack: ["HTML", "CSS"],
     thumbnail: "/projects/apple-web.png",
-    liveUrl: "https://startling-buttercream-da4ad3.netlify.app/",
+    liveUrl: "https://apple-web-sigma-ten.vercel.app/",
   },
   {
     title: "DOM",
@@ -109,7 +109,7 @@ export const PROJECTS: IProject[] = [
     year: 2025,
     techStack: ["HTML", "CSS", "JavaScript"],
     thumbnail: "/projects/dom.png",
-    liveUrl: "https://illustrious-mermaid-11901d.netlify.app/",
+    liveUrl: "https://dom-rouge.vercel.app/",
   },
   {
     title: "To Do App",
@@ -117,7 +117,7 @@ export const PROJECTS: IProject[] = [
     year: 2025,
     techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS"],
     thumbnail: "/projects/to-do-app.png",
-    liveUrl: "https://todoapptsolmon.netlify.app/",
+    liveUrl: "https://to-do-app-nu-bay.vercel.app/",
   },
   {
     title: "Multi Step Form",
@@ -125,7 +125,7 @@ export const PROJECTS: IProject[] = [
     year: 2025,
     techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS"],
     thumbnail: "/projects/multi-step-form.png",
-    liveUrl: "https://multistepform-tsolmon.netlify.app/",
+    liveUrl: "https://multi-step-form-eight-beta.vercel.app/",
   },
   {
     title: "Movie Web App",
@@ -133,7 +133,7 @@ export const PROJECTS: IProject[] = [
     year: 2025,
     techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS", "TypeScript", "Eslint"],
     thumbnail: "/projects/movie-web-app.png",
-    liveUrl: "https://movie-web-app-tsolmon.netlify.app/",
+    liveUrl: "https://movie-web-app-swart-one.vercel.app/",
   },
   {
     title: "Food Delivery App",

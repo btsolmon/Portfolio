@@ -22,16 +22,57 @@ export default function ProjectList() {
   );
 
   useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+
+      mm.add("(max-width: 767px)", () => {
+        const trigger = ScrollTrigger.create({
+          trigger: containerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          onUpdate: () => {
+            const titles =
+              containerRef.current?.querySelectorAll(".project-item h4");
+            if (!titles?.length) return;
+
+            const target = window.innerHeight * 0.42;
+            let bestIdx = 0;
+            let bestDist = Infinity;
+
+            titles.forEach((title, index) => {
+              const dist = Math.abs(title.getBoundingClientRect().top - target);
+              if (dist < bestDist) {
+                bestDist = dist;
+                bestIdx = index;
+              }
+            });
+
+            const slug = PROJECTS[bestIdx]?.slug;
+            if (slug) {
+              setSelectedProject((current) =>
+                current === slug ? current : slug,
+              );
+            }
+          },
+        });
+
+        return () => trigger.kill();
+      });
+
+      return () => mm.revert();
+    },
+    { scope: containerRef },
+  );
+
+  useGSAP(
     (context, contextSafe) => {
       if (window.innerWidth < 768) {
-        setSelectedProject(null);
         return;
       }
 
       const handleMouseMove = contextSafe?.((e: MouseEvent) => {
         if (!containerRef.current || !imageContainer.current) return;
         if (window.innerWidth < 768) {
-          setSelectedProject(null);
           return;
         }
 
@@ -85,10 +126,7 @@ export default function ProjectList() {
   );
 
   const handleMouseEnter = (slug: string) => {
-    if (window.innerWidth < 768) {
-      setSelectedProject(null);
-      return;
-    }
+    if (window.innerWidth < 768) return;
     setSelectedProject(slug);
   };
 
@@ -119,7 +157,7 @@ export default function ProjectList() {
             </div>
           )}
 
-          <div className="flex flex-col max-md:gap-10">
+          <div className="flex flex-col">
             {PROJECTS.map((project, index) => (
               <Project
                 index={index}
