@@ -15,6 +15,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function ProjectList() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
   const imageContainer = useRef<HTMLDivElement>(null);
   const { t } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<string | null>(
@@ -27,12 +28,12 @@ export default function ProjectList() {
 
       mm.add("(max-width: 767px)", () => {
         const trigger = ScrollTrigger.create({
-          trigger: containerRef.current,
+          trigger: listRef.current,
           start: "top bottom",
           end: "bottom top",
           onUpdate: () => {
             const titles =
-              containerRef.current?.querySelectorAll(".project-item h4");
+              listRef.current?.querySelectorAll(".project-item h4");
             if (!titles?.length) return;
 
             const target = window.innerHeight * 0.42;
@@ -61,54 +62,51 @@ export default function ProjectList() {
 
       return () => mm.revert();
     },
-    { scope: containerRef },
+    { scope: listRef },
   );
 
   useGSAP(
     (context, contextSafe) => {
-      if (window.innerWidth < 768) {
-        return;
-      }
+      const mm = gsap.matchMedia();
 
-      const handleMouseMove = contextSafe?.((e: MouseEvent) => {
-        if (!containerRef.current || !imageContainer.current) return;
-        if (window.innerWidth < 768) {
-          return;
-        }
+      mm.add("(min-width: 768px)", () => {
+        const handleMouseMove = contextSafe?.((e: MouseEvent) => {
+          if (!containerRef.current || !imageContainer.current) return;
+          if (document.documentElement.getAttribute("data-nav-open") === "true") {
+            gsap.killTweensOf(imageContainer.current);
+            gsap.set(imageContainer.current, { opacity: 0 });
+            return;
+          }
 
-        if (document.documentElement.hasAttribute("data-nav-open")) {
+          const containerRect = containerRef.current.getBoundingClientRect();
+          const imageRect = imageContainer.current.getBoundingClientRect();
+          const offsetTop = e.clientY - containerRect.y;
+
+          if (
+            containerRect.y > e.clientY ||
+            containerRect.bottom < e.clientY ||
+            containerRect.x > e.clientX ||
+            containerRect.right < e.clientX
+          ) {
+            gsap.to(imageContainer.current, {
+              duration: 0.3,
+              opacity: 0,
+            });
+            return;
+          }
+
           gsap.to(imageContainer.current, {
-            duration: 0.2,
-            opacity: 0,
+            y: offsetTop - imageRect.height / 2,
+            duration: 1,
+            opacity: 1,
           });
-          return;
-        }
+        }) as unknown as EventListener;
 
-        const containerRect = containerRef.current.getBoundingClientRect();
-        const imageRect = imageContainer.current.getBoundingClientRect();
-        const offsetTop = e.clientY - containerRect.y;
+        window.addEventListener("mousemove", handleMouseMove);
+        return () => window.removeEventListener("mousemove", handleMouseMove);
+      });
 
-        if (
-          containerRect.y > e.clientY ||
-          containerRect.bottom < e.clientY ||
-          containerRect.x > e.clientX ||
-          containerRect.right < e.clientX
-        ) {
-          return gsap.to(imageContainer.current, {
-            duration: 0.3,
-            opacity: 0,
-          });
-        }
-
-        gsap.to(imageContainer.current, {
-          y: offsetTop - imageRect.height / 2,
-          duration: 1,
-          opacity: 1,
-        });
-      }) as unknown as EventListener;
-
-      window.addEventListener("mousemove", handleMouseMove);
-      return () => window.removeEventListener("mousemove", handleMouseMove);
+      return () => mm.revert();
     },
     { scope: containerRef },
   );
@@ -117,7 +115,7 @@ export default function ProjectList() {
     () => {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: containerRef.current,
+          trigger: listRef.current,
           start: "top bottom",
           end: "top 80%",
           toggleActions: "restart none none reverse",
@@ -125,17 +123,33 @@ export default function ProjectList() {
         },
       });
 
-      tl.from(containerRef.current, {
+      tl.from(listRef.current, {
         y: 150,
         opacity: 0,
       });
     },
-    { scope: containerRef },
+    { scope: listRef },
   );
+
+  const hidePreview = () => {
+    if (!imageContainer.current) return;
+    gsap.killTweensOf(imageContainer.current);
+    gsap.set(imageContainer.current, { opacity: 0 });
+  };
+
+  const isNavOpen = () =>
+    document.documentElement.getAttribute("data-nav-open") === "true";
 
   const handleMouseEnter = (slug: string) => {
     if (window.innerWidth < 768) return;
+    if (isNavOpen()) {
+      hidePreview();
+      return;
+    }
     setSelectedProject(slug);
+    if (imageContainer.current) {
+      gsap.to(imageContainer.current, { opacity: 1, duration: 0.35 });
+    }
   };
 
   return (
@@ -146,7 +160,7 @@ export default function ProjectList() {
         <div className="group/projects relative" ref={containerRef}>
           {selectedProject !== null && (
             <div
-              className="project-hover-preview pointer-events-none absolute top-0 right-0 z-[1] aspect-video w-[320px] overflow-hidden rounded-md bg-background/80 opacity-0 shadow-lg max-md:hidden xl:w-[480px]"
+              className="project-hover-preview pointer-events-none absolute top-0 right-0 z-20 aspect-video w-[320px] overflow-hidden rounded-md bg-background/80 opacity-0 shadow-lg max-md:hidden xl:w-[480px]"
               ref={imageContainer}
             >
               {PROJECTS.map((project) => (
@@ -165,7 +179,7 @@ export default function ProjectList() {
             </div>
           )}
 
-          <div className="flex flex-col">
+          <div className="flex flex-col" ref={listRef}>
             {PROJECTS.map((project, index) => (
               <Project
                 index={index}

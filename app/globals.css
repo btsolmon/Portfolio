@@ -83,6 +83,7 @@ html[lang="mn"] .about-belief {
   font-family: var(--font-roboto), sans-serif;
 }
 
-html[data-nav-open] .project-hover-preview {
+html[data-nav-open="true"] .project-hover-preview {
   opacity: 0 !important;
+  visibility: hidden !important;
 }

@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className="relative z-10" id="contact">
-      <div className="mx-auto max-w-[1148px] px-4 pb-5 text-center">
+      <div className="mx-auto max-w-[1148px] px-4 pt-2 pb-8 text-center">
         <p className="text-lg">{t("footer.cta")}</p>
         <a
           href={`mailto:${GENERAL_INFO.email}`}

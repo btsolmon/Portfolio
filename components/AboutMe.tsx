@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function AboutMe() {
   const container = React.useRef<HTMLDivElement>(null);
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   void translations;
 
   useGSAP(
@@ -31,7 +31,7 @@ export default function AboutMe() {
         stagger: 0.05,
       });
     },
-    { scope: container },
+    { scope: container, dependencies: [locale], revertOnUpdate: true },
   );
 
   useGSAP(
@@ -51,7 +51,7 @@ export default function AboutMe() {
         stagger: 0.02,
       });
     },
-    { scope: container },
+    { scope: container, dependencies: [locale], revertOnUpdate: true },
   );
 
   return (

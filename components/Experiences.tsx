@@ -32,7 +32,7 @@ export default function Experiences() {
         stagger: 0.3,
       });
     },
-    { scope: containerRef },
+    { scope: containerRef, dependencies: [locale], revertOnUpdate: true },
   );
 
   useGSAP(
@@ -51,7 +51,7 @@ export default function Experiences() {
         opacity: 0,
       });
     },
-    { scope: containerRef },
+    { scope: containerRef, dependencies: [locale], revertOnUpdate: true },
   );
 
   return (

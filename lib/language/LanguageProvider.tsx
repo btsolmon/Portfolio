@@ -16,6 +16,10 @@ import {
   type Locale,
   type TranslationKey,
 } from "@/lib/language/translations";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const STORAGE_KEY = "portfolio-lang";
 
@@ -37,6 +41,16 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = locale;
+    const refresh = () => ScrollTrigger.refresh();
+    const frame = window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(refresh);
+    });
+    const timeout = window.setTimeout(refresh, 80);
+    void document.fonts.ready.then(refresh);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timeout);
+    };
   }, [locale]);
 
   const setLocale = useCallback((next: Locale) => {

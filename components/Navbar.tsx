@@ -29,13 +29,21 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useLanguage();
 
+  const setMenuOpen = (open: boolean) => {
+    setIsMenuOpen(open);
+    if (open) {
+      document.documentElement.setAttribute("data-nav-open", "true");
+    } else {
+      document.documentElement.removeAttribute("data-nav-open");
+    }
+  };
+
   useEffect(() => {
-    document.documentElement.toggleAttribute("data-nav-open", isMenuOpen);
     return () => document.documentElement.removeAttribute("data-nav-open");
-  }, [isMenuOpen]);
+  }, []);
 
   const go = (url: string) => {
-    setIsMenuOpen(false);
+    setMenuOpen(false);
     const el = document.querySelector(url);
     el?.scrollIntoView({ behavior: "smooth" });
   };
@@ -49,7 +57,7 @@ export default function Navbar() {
         </div>
         <button
           className="group absolute top-5 right-5 z-[2] size-12 md:right-10"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => setMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? t("nav.close") : t("nav.menu")}
         >
           <span
@@ -72,7 +80,7 @@ export default function Navbar() {
           "overlay fixed inset-y-0 left-0 right-[min(500px,calc(100vw-3rem))] z-30 bg-black/10 transition-all duration-150 dark:bg-black/20",
           { "pointer-events-none invisible opacity-0": !isMenuOpen },
         )}
-        onClick={() => setIsMenuOpen(false)}
+        onClick={() => setMenuOpen(false)}
       />
 
       <div

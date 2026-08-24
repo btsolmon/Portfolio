@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function Skills() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   useGSAP(
     () => {
@@ -36,7 +36,7 @@ export default function Skills() {
         stagger: 0.4,
       });
     },
-    { scope: containerRef },
+    { scope: containerRef, dependencies: [locale], revertOnUpdate: true },
   );
 
   useGSAP(
@@ -55,7 +55,7 @@ export default function Skills() {
         opacity: 0,
       });
     },
-    { scope: containerRef },
+    { scope: containerRef, dependencies: [locale], revertOnUpdate: true },
   );
 
   return (

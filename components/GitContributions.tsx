@@ -3,7 +3,10 @@
 import SectionTitle from "@/components/SectionTitle";
 import { GITHUB_USERNAME } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import { useEffect, useMemo, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLanguage } from "@/lib/language/LanguageProvider";
 import type { TranslationKey } from "@/lib/language/translations";
 
@@ -82,13 +85,41 @@ function monthLabels(
   });
 }
 
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 export default function GitContributions() {
+  const containerRef = useRef<HTMLDivElement>(null);
   const [days, setDays] = useState<Contribution[]>([]);
   const [total, setTotal] = useState(0);
   const [error, setError] = useState(false);
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const monthNames = MONTH_KEYS.map((key) => t(key));
   const dayLabels = ["", t("github.dayMon"), "", t("github.dayWed"), "", t("github.dayFri"), ""];
+
+  useGSAP(
+    () => {
+      const el = containerRef.current;
+      if (!el) return;
+
+      gsap.set(el, { clearProps: "opacity,transform" });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: "top 90%",
+          end: "top 65%",
+          toggleActions: "play none none reverse",
+          scrub: 1,
+        },
+      });
+
+      tl.from(el, {
+        y: 80,
+        opacity: 0,
+      });
+    },
+    { scope: containerRef, dependencies: [locale, days.length], revertOnUpdate: true },
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -116,8 +147,8 @@ export default function GitContributions() {
   const months = useMemo(() => monthLabels(weeks, monthNames), [weeks, monthNames]);
 
   return (
-    <section className="relative z-10 py-section" id="github">
-      <div className="mx-auto max-w-[1148px] px-4">
+    <section className="relative z-10 pb-20" id="github">
+      <div className="mx-auto max-w-[1148px] px-4" ref={containerRef}>
         <SectionTitle title={t("github.title")} />
 
         <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
