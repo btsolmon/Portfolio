@@ -12,9 +12,16 @@ import ProjectList from "@/components/ProjectList";
 import Skills from "@/components/Skills";
 import StickyEmail from "@/components/StickyEmail";
 import { usePortfolioChat } from "@/hooks/usePortfolioChat";
+import { useLayoutEffect } from "react";
 
 export default function Home() {
   const chat = usePortfolioChat();
+
+  useLayoutEffect(() => {
+    if (window.location.hash) return;
+    history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

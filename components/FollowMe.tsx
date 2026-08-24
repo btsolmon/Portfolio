@@ -8,7 +8,7 @@ export default function FollowMe() {
   const { t } = useLanguage();
 
   return (
-    <div className="relative z-10 mt-20 bg-foreground/10 py-16 text-foreground">
+    <div className="relative z-10 mt-20 border-t border-white/20 bg-white/12 py-16 text-foreground shadow-[0_-16px_40px_rgba(0,0,0,0.04)] backdrop-blur-xl backdrop-saturate-150 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[0_-16px_50px_rgba(0,0,0,0.2)]">
       <div className="mx-auto flex max-w-[1148px] flex-col items-center px-4">
         <p className="text-sm font-medium tracking-[0.42em]">
           {t("footer.follow")}

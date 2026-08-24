@@ -46,6 +46,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-roboto), var(--font-geist-sans), Arial, Helvetica,
     sans-serif;
+  overflow-anchor: none;
 }
 
 #fluid {
@@ -64,4 +65,8 @@ body {
 
 .font-anton {
   font-family: var(--font-anton);
+}
+
+html[data-nav-open] .project-hover-preview {
+  opacity: 0 !important;
 }

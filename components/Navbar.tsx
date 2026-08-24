@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MoveUpRight } from "lucide-react";
 import { GENERAL_INFO, SOCIAL_LINKS } from "@/lib/data";
 import LanguageToggle from "@/components/LanguageToggle";
@@ -28,6 +28,11 @@ const MENU_LINKS: { name: TranslationKey; url: string }[] = [
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useLanguage();
+
+  useEffect(() => {
+    document.documentElement.toggleAttribute("data-nav-open", isMenuOpen);
+    return () => document.documentElement.removeAttribute("data-nav-open");
+  }, [isMenuOpen]);
 
   const go = (url: string) => {
     setIsMenuOpen(false);
@@ -64,7 +69,7 @@ export default function Navbar() {
 
       <div
         className={cn(
-          "overlay fixed inset-0 z-30 bg-black/40 transition-all duration-150",
+          "overlay fixed inset-y-0 left-0 right-[min(500px,calc(100vw-3rem))] z-30 bg-black/10 transition-all duration-150 dark:bg-black/20",
           { "pointer-events-none invisible opacity-0": !isMenuOpen },
         )}
         onClick={() => setIsMenuOpen(false)}
@@ -72,17 +77,10 @@ export default function Navbar() {
 
       <div
         className={cn(
-          "fixed top-0 right-0 z-30 flex h-[100dvh] w-[500px] max-w-[calc(100vw-3rem)] translate-x-full transform flex-col gap-y-10 overflow-y-auto py-10 transition-transform duration-700 lg:justify-center",
+          "fixed top-0 right-0 z-30 flex h-[100dvh] w-[500px] max-w-[calc(100vw-3rem)] translate-x-full transform flex-col gap-y-10 overflow-y-auto border-l border-white/20 bg-white/12 py-10 shadow-[-16px_0_40px_rgba(0,0,0,0.04)] backdrop-blur-xl backdrop-saturate-150 transition-transform duration-700 lg:justify-center dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[-16px_0_50px_rgba(0,0,0,0.2)]",
           { "translate-x-0": isMenuOpen },
         )}
       >
-        <div
-          className={cn(
-            "fixed inset-0 z-[-1] scale-150 translate-x-1/2 rounded-[50%] bg-background duration-700 delay-150",
-            { "translate-x-0": isMenuOpen },
-          )}
-        />
-
         <div className="mx-8 flex w-full max-w-[300px] grow md:items-center sm:mx-auto">
           <div className="flex w-full gap-10 max-lg:flex-col lg:justify-between">
             <div className="max-lg:order-2">
