@@ -152,8 +152,8 @@ export const translations = {
     },
     stack: {
       title: "Миний Стэк",
-      frontend: "Фронтенд",
-      backend: "Бекенд",
+      frontend: "Фронтэнд",
+      backend: "Бэкэнд",
       database: "Өгөгдлийн сан",
       tools: "Хэрэгслүүд",
     },
