@@ -17,7 +17,7 @@ export const ABOUT = {
   cityMn: "Улаанбаатар",
   countryMn: "Монгол улс",
   summary:
-    "I'm a junior software engineer from Ulaanbaatar. I loved computers as a kid, studied law at RUDN University in Moscow after graduating from the Mongolian-Russian Joint School No. 3 (Орос 3), and I'm now training as a software engineer at Pinecone Academy, graduating in October 2026.",
+    "I am a full-stack developer based in Ulaanbaatar, currently completing the Software Engineering program at Pinecone Academy. I originally studied law in Moscow, then followed a lifelong passion for computers and moved into software. Before tech I spent 6 years in finance, logistics, and business operations, advancing from office manager to senior manager. I combine that with JavaScript, TypeScript, React, Next.js, Node.js, and databases. My philosophy: make things fast, accessible, and easy to use.",
   education: [
     "Mongolian-Russian Joint School No. 3 (Орос 3), Ulaanbaatar",
     "RUDN University, Moscow — law / jurisprudence",
@@ -173,8 +173,19 @@ export const PROJECTS: IProject[] = [
 
 export const MY_EXPERIENCE = [
   {
-    title: "Software Engineering Student",
+    company: "Forise Group",
+    companyMn: "Форайз Групп",
+    title: "Senior Office Manager",
+    titleMn: "Ахлах оффис менежер",
+    duration: "Nov 2019 – Aug 2025",
+    durationMn: "2019 оны 11-р сар – 2025 оны 8-р сар",
+  },
+  {
     company: "Pinecone Academy",
+    companyMn: "Pinecone Academy",
+    title: "Software Engineering Student",
+    titleMn: "Програм хангамжийн инженерээр суралцагч",
     duration: "Jan 2026 – Oct 2026",
+    durationMn: "2026 оны 1-р сар – 2026 оны 10-р сар",
   },
 ];

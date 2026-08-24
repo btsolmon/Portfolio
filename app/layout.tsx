@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Geist, Geist_Mono, Roboto_Flex } from "next/font/google";
+import { Anton, Geist, Geist_Mono, Golos_Text, Oswald, Roboto_Flex } from "next/font/google";
 import { LanguageProvider } from "@/lib/language/LanguageProvider";
 import { translations } from "@/lib/language/translations";
 import { ThemeProvider } from "@/lib/theme/ThemeProvider";
@@ -21,9 +21,19 @@ const anton = Anton({
   variable: "--font-anton-display",
 });
 
+const oswald = Oswald({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-oswald",
+});
+
 const robotoFlex = Roboto_Flex({
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
   variable: "--font-roboto",
+});
+
+const golos = Golos_Text({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-golos",
 });
 
 export const metadata: Metadata = {
@@ -35,7 +45,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${robotoFlex.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${oswald.variable} ${robotoFlex.variable} ${golos.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
@@ -48,7 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full bg-background text-foreground">
         <ThemeProvider>
           <LanguageProvider
-            key={`${translations.en.about.hi}|${translations.mn.about.hi}|${translations.mn.hero.ask}|${translations.mn.about.p2}`}
+            key={`${translations.en.about.p1}|${translations.mn.about.p1}|${translations.en.about.p3}`}
           >
             {children}
           </LanguageProvider>

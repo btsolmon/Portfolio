@@ -12,7 +12,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Experiences() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   useGSAP(
     () => {
@@ -61,13 +61,15 @@ export default function Experiences() {
 
         <div className="grid gap-14">
           {MY_EXPERIENCE.map((item) => (
-            <div key={item.title} className="experience-item">
-              <p className="text-xl text-muted-foreground">{item.company}</p>
+            <div key={`${item.company}-${item.title}`} className="experience-item">
+              <p className="text-xl text-muted-foreground">
+                {locale === "mn" ? item.companyMn : item.company}
+              </p>
               <p className="font-anton mt-3.5 mb-2.5 text-5xl leading-none">
-                {t("experience.role")}
+                {locale === "mn" ? item.titleMn : item.title}
               </p>
               <p className="text-lg text-muted-foreground">
-                {t("experience.duration")}
+                {locale === "mn" ? item.durationMn : item.duration}
               </p>
             </div>
           ))}

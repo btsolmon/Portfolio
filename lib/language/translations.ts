@@ -3,7 +3,7 @@ export type Locale = "en" | "mn";
 export const translations = {
   en: {
     meta: {
-      title: "Tsolmon — Junior Software Engineer",
+      title: "Tsolmon — Software Engineer",
     },
     lang: {
       switch: "Switch language",
@@ -28,7 +28,7 @@ export const translations = {
     },
     hero: {
       hey: "Hey, I'm Tsolmon 👋",
-      role: "Junior Software Engineer",
+      role: "Software Engineer",
       ask: "Ask me anything…",
       submit: "Submit question",
       me: "Me",
@@ -44,11 +44,12 @@ export const translations = {
     },
     about: {
       belief:
-        "I put users first and shape every project around what they actually need.",
+        "I prioritize users and design every project around their actual needs—making sure everything is fast, accessible, and seamless to use.",
       label: "About Me.",
       hi: "Hi!",
-      p1: "I'm Tsolmon, a software engineering student in Ulaanbaatar. I studied law in Moscow, then followed a lifelong love of computers and changed path. I'm now at Pinecone Academy, graduating this October.",
-      p2: "I'm a full-stack developer. My three principles are to make things fast, accessible, and easy to use.",
+      p1: "I am a Full-stack Developer based in Ulaanbaatar, currently completing the Software Engineering program at Pinecone Academy.",
+      p2: "I originally studied law in Moscow before choosing to follow my lifelong passion for computers and transitioning into software development. This journey taught me adaptability, structured thinking, and a fresh perspective on problem-solving.",
+      p3: "Before stepping into tech, I spent 6 years successfully building a robust background in finance, logistics, and business operations. Today, I aim to combine my previous business experience with modern technological solutions to develop products that create real value.",
     },
     stack: {
       title: "My Stack",
@@ -59,8 +60,6 @@ export const translations = {
     },
     experience: {
       title: "My Experience",
-      role: "Software Engineering Student",
-      duration: "Jan 2026 – Oct 2026",
     },
     projects: {
       title: "Selected Projects",
@@ -144,11 +143,12 @@ export const translations = {
     },
     about: {
       belief:
-        "Би хэрэглэгчийг нэн тэргүүнд тавьж, төсөл бүрээ тэдний бодит хэрэгцээнд нийцүүлэн бүтээдэг.",
+        "Хэрэглэгчдийг нэгдүгээрт тавьж, аливаа төслийг тэдний бодит хэрэгцээнд яг тохируулан, хурдан, хүртээмжтэй, мөн ашиглахад ямар ч төвөггүй байхаар бүтээхийг зорьдог.",
       label: "Миний тухай.",
       hi: "Сайн уу!",
-      p1: "Намайг Цолмон гэдэг. Улаанбаатарт амьдардаг, програм хангамжийн инженерээр суралцаж буй хөгжүүлэгч. Москвад хуулийн чиглэлээр сурч байсан ч багаасаа компьютерт дуртай байсан тул мэргэжлээ сольсон. Одоо Pinecone Academy-д суралцаж байгаа бөгөөд энэ оны 10 дугаар сард төгсөнө.",
-      p2: "Би full-stack хөгжүүлэгч. Миний баримтладаг гурван зарчим бол аливааг хурдан, хүртээмжтэй, хэрэглэхэд хялбар болгох."
+      p1: "Би Улаанбаатарт амьдардаг Full-stack хөгжүүлэгч байна. Одоо Pinecone Academy-ийн програм хангамжийн инженерийн хөтөлбөрийг төгсөж байгаа.",
+      p2: "Анх Москва хотод хууль эрх зүйн чиглэлээр суралцаж байсан ч багаасаа компьютерт дуртай байсан хүсэлдээ хөтлөгдөн карьераа өөрчилсөн юм. Энэхүү аялал минь надад дасан зохицох чадвар, цэгцтэй сэтгэлгээ, тулгамдсан асуудлыг өөр өнцгөөс харж шийдвэрлэх туршлагыг өгсөн.",
+      p3: "Технологийн салбарт хөл тавихаасаа өмнө би санхүү, ложистик болон бизнесийн үйл ажиллагааны чиглэлээр 6 жил ажилласан. Өнөөдөр би өмнөх бизнесийн туршлагаа орчин үеийн технологийн шийдлүүдтэй хослуулан, бодит үнэ цэнийг бүтээх бүтээгдэхүүнүүдийг хөгжүүлэхийг зорьж байна.",
     },
     stack: {
       title: "Миний Стэк",
@@ -159,8 +159,6 @@ export const translations = {
     },
     experience: {
       title: "Миний туршлага",
-      role: "Програм хангамжийн инженерээр суралцагч",
-      duration: "2026 оны 1-р сар – 2026 оны 10-р сар",
     },
     projects: {
       title: "Миний төслүүд",
@@ -238,14 +236,13 @@ export type TranslationKey =
   | "about.hi"
   | "about.p1"
   | "about.p2"
+  | "about.p3"
   | "stack.title"
   | "stack.frontend"
   | "stack.backend"
   | "stack.database"
   | "stack.tools"
   | "experience.title"
-  | "experience.role"
-  | "experience.duration"
   | "projects.title"
   | "github.title"
   | "github.loading"
