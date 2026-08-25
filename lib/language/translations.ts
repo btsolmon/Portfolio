@@ -49,7 +49,7 @@ export const translations = {
       hi: "Hi!",
       p1: "I am a Full-stack Developer based in Ulaanbaatar, currently completing the Software Engineering program at Pinecone Academy.",
       p2: "I originally studied law in Moscow before choosing to follow my lifelong passion for computers and transitioning into software development. This journey taught me adaptability, structured thinking, and a fresh perspective on problem-solving.",
-      p3: "Before stepping into tech, I spent 6 years successfully building a robust background in finance, logistics, and business operations. Today, I aim to combine my previous business experience with modern technological solutions to develop products that create real value.",
+      p3: "Before stepping into tech, I spent 6 years successfully building a robust background in finance, logistics, and business operations. I aim to combine my previous work experience with modern technological solutions to develop products that create real value.",
     },
     stack: {
       title: "My Stack",
@@ -148,7 +148,7 @@ export const translations = {
       hi: "Сайн уу!",
       p1: "Би Улаанбаатарт амьдардаг Full-stack хөгжүүлэгч байна. Одоо Pinecone Academy-ийн програм хангамжийн инженерийн хөтөлбөрийг төгсөж байгаа.",
       p2: "Анх Москва хотод хууль эрх зүйн чиглэлээр суралцаж байсан ч багаасаа компьютерт дуртай байсан хүсэлдээ хөтлөгдөн карьераа өөрчилсөн юм. Энэхүү аялал минь надад дасан зохицох чадвар, цэгцтэй сэтгэлгээ, тулгамдсан асуудлыг өөр өнцгөөс харж шийдвэрлэх туршлагыг өгсөн.",
-      p3: "Технологийн салбарт хөл тавихаасаа өмнө би санхүү, ложистик болон бизнесийн үйл ажиллагааны чиглэлээр 6 жил ажилласан. Өнөөдөр би өмнөх бизнесийн туршлагаа орчин үеийн технологийн шийдлүүдтэй хослуулан, бодит үнэ цэнийг бүтээх бүтээгдэхүүнүүдийг хөгжүүлэхийг зорьж байна.",
+      p3: "Технологийн салбарт хөл тавихаасаа өмнө би санхүү, ложистик болон бизнесийн үйл ажиллагааны чиглэлээр 6 жил ажилласан. Өмнөх ажлын туршлагаа орчин үеийн технологийн шийдлүүдтэй хослуулан, бодит үнэ цэнийг бүтээх бүтээгдэхүүнүүдийг хөгжүүлэхийг зорьж байна.",
     },
     stack: {
       title: "Миний Стэк",
