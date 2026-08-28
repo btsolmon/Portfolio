@@ -46,7 +46,7 @@ export const translations = {
       belief:
         "I prioritize users and design every project around their actual needs—making sure everything is fast, accessible, and seamless to use.",
       label: "About Me.",
-      hi: "Hi!",
+      hi: "Whoever can be trusted with very little can also be trusted with much.",
       p1: "I am a Full-stack Developer based in Ulaanbaatar, currently completing the Software Engineering program at Pinecone Academy.",
       p2: "I originally studied law in Moscow before choosing to follow my lifelong passion for computers and transitioning into software development. This journey taught me adaptability, structured thinking, and a fresh perspective on problem-solving.",
       p3: "Before stepping into tech, I spent 6 years successfully building a robust background in finance, logistics, and business operations. I aim to combine my previous work experience with modern technological solutions to develop products that create real value.",
@@ -145,7 +145,7 @@ export const translations = {
       belief:
         "Хэрэглэгчдийг нэгдүгээрт тавьж, аливаа төслийг тэдний бодит хэрэгцээнд яг тохируулан, хурдан, хүртээмжтэй, мөн ашиглахад ямар ч төвөггүй байхаар бүтээхийг зорьдог.",
       label: "Миний тухай.",
-      hi: "Сайн уу!",
+      hi: "Маш бага зүйлд итгэл дааж чаддаг хэн ч их зүйлд итгэл дааж чадна.",
       p1: "Би Улаанбаатарт амьдардаг Full-stack хөгжүүлэгч байна. Одоо Pinecone Academy-ийн програм хангамжийн инженерийн хөтөлбөрийг төгсөж байгаа.",
       p2: "Анх Москва хотод хууль эрх зүйн чиглэлээр суралцаж байсан ч багаасаа компьютерт дуртай байсан хүсэлдээ хөтлөгдөн карьераа өөрчилсөн юм. Энэхүү аялал минь надад дасан зохицох чадвар, цэгцтэй сэтгэлгээ, тулгамдсан асуудлыг өөр өнцгөөс харж шийдвэрлэх туршлагыг өгсөн.",
       p3: "Технологийн салбарт хөл тавихаасаа өмнө би санхүү, ложистик болон бизнесийн үйл ажиллагааны чиглэлээр 6 жил ажилласан. Өмнөх ажлын туршлагаа орчин үеийн технологийн шийдлүүдтэй хослуулан, бодит үнэ цэнийг бүтээх бүтээгдэхүүнүүдийг хөгжүүлэхийг зорьж байна.",
