@@ -2,8 +2,8 @@
 
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
-import { MoveUpRight } from "lucide-react";
-import { GENERAL_INFO, SOCIAL_LINKS } from "@/lib/data";
+import { Download, MoveUpRight } from "lucide-react";
+import { CV_URL, GENERAL_INFO, SOCIAL_LINKS } from "@/lib/data";
 import LanguageToggle from "@/components/LanguageToggle";
 import ThemeToggle from "@/components/ThemeToggle";
 import { useLanguage } from "@/lib/language/LanguageProvider";
@@ -140,6 +140,14 @@ export default function Navbar() {
         <div className="mx-8 w-full max-w-[300px] sm:mx-auto">
           <p className="mb-4 text-muted-foreground">{t("nav.contact")}</p>
           <a href={`mailto:${GENERAL_INFO.email}`}>{GENERAL_INFO.email}</a>
+          <a
+            href={CV_URL}
+            download
+            className="mt-6 flex items-center gap-2 text-lg hover:underline"
+          >
+            <Download size={18} />
+            {t("experience.downloadCv")}
+          </a>
         </div>
       </div>
     </>

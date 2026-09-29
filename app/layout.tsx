@@ -38,7 +38,18 @@ const golos = Golos_Text({
 
 export const metadata: Metadata = {
   title: translations.en.meta.title,
-  description: translations.en.about.p1,
+  description:
+    "Junior fullstack developer from Ulaanbaatar building with Next.js, TypeScript, and SQL. Portfolio of Bayar Tsolmon.",
+  authors: [{ name: "Bayar Tsolmon" }],
+  metadataBase: new URL("https://tsolmons-portfolio.vercel.app"),
+  openGraph: {
+    title: translations.en.meta.title,
+    description:
+      "Junior fullstack developer from Ulaanbaatar building with Next.js, TypeScript, and SQL.",
+    url: "https://tsolmons-portfolio.vercel.app",
+    siteName: "Bayar Tsolmon",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -3,7 +3,7 @@ export type Locale = "en" | "mn";
 export const translations = {
   en: {
     meta: {
-      title: "Tsolmon — Software Engineer",
+      title: "Bayar Tsolmon — Junior Fullstack Developer",
     },
     lang: {
       switch: "Switch language",
@@ -58,9 +58,11 @@ export const translations = {
       database: "Database",
       tools: "Tools",
       cloud: "Cloud & Infra",
+      languages: "Languages",
     },
     experience: {
       title: "My Experience",
+      downloadCv: "Download CV",
     },
     projects: {
       title: "Selected Projects",
@@ -103,7 +105,7 @@ export const translations = {
   },
   mn: {
     meta: {
-      title: "Цолмон — Програм хангамжийн инженер",
+      title: "Баяр Цолмон — Junior Fullstack Developer",
     },
     lang: {
       switch: "Хэл солих",
@@ -158,9 +160,11 @@ export const translations = {
       database: "Өгөгдлийн сан",
       tools: "Хэрэгслүүд",
       cloud: "Cloud & Infra",
+      languages: "Гадаад хэл",
     },
     experience: {
       title: "Миний туршлага",
+      downloadCv: "CV татах",
     },
     projects: {
       title: "Миний төслүүд",
@@ -245,7 +249,9 @@ export type TranslationKey =
   | "stack.database"
   | "stack.tools"
   | "stack.cloud"
+  | "stack.languages"
   | "experience.title"
+  | "experience.downloadCv"
   | "projects.title"
   | "github.title"
   | "github.loading"

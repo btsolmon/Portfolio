@@ -52,6 +52,8 @@ export const ABOUT = {
   ],
 };
 
+export const CV_URL = "/CV_Bayar_Tsolmon_2026.pdf";
+
 export const GITHUB_USERNAME = "btsolmon";
 
 export const SOCIAL_LINKS = [
@@ -70,6 +72,7 @@ export const MY_STACK = {
     { name: "Tailwind CSS", icon: "/logo/tailwind.png" },
     { name: "HTML5", icon: "/logo/html5.svg" },
     { name: "CSS3", icon: "/logo/css3.svg" },
+    { name: "Responsive UI" },
   ],
   backend: [
     { name: "Node.js", icon: "/logo/node.png" },
@@ -99,11 +102,16 @@ export const MY_STACK = {
     { name: "D1", icon: "/logo/cloudflare.svg" },
     { name: "R2", icon: "/logo/cloudflare.svg" },
   ],
+  languages: [
+    { name: "English — IELTS 7.5" },
+    { name: "Russian — Advanced" },
+    { name: "Japanese — Beginner" },
+  ],
 };
 
 export const PROJECTS: IProject[] = [
   {
-    title: "Movie Web App",
+    title: "MovieZ",
     slug: "movie-web-app",
     year: 2025,
     techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS", "TypeScript", "Eslint"],
@@ -128,7 +136,7 @@ export const PROJECTS: IProject[] = [
     team: true,
   },
   {
-    title: "Nuudelchin",
+    title: "Malchin",
     slug: "nuudelchin",
     year: 2025,
     techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS", "TypeScript", "Eslint"],
@@ -180,5 +188,32 @@ export const MY_EXPERIENCE = [
     titleMn: "Ахлах менежер — импорт, жижиглэн худалдааны үйл ажиллагаа",
     duration: "Nov 2019 – Aug 2025",
     durationMn: "2019 оны 11-р сар – 2025 оны 8-р сар",
+    bullets: [
+      {
+        text: "Kept end-to-end records for 70+ product lines imported from Russia — orders, procurement, transport, and warehouse stock — tracking every item's status and movement by hand.",
+        textMn:
+          "ОХУ-аас импортлох 70 гаруй нэр төрлийн барааны захиалга, татан авалт, тээвэр, агуулахын үлдэгдэл хүртэлх бүх мөчлөгийн бүртгэлийг хөтөлж, бараа бүрийн төлөв, шилжилт бүрийг гараар хянасан.",
+      },
+      {
+        text: "Reconciled ~10M MNT of daily sales against system records and real stock, tracing every discrepancy transaction by transaction to find and fix the cause.",
+        textMn:
+          "Өдөрт дунджаар 10 сая ₮-ийн борлуулалтын тооцоог системийн бүртгэл болон бодит үлдэгдэлтэй тулгаж, зөрүү гарвал гүйлгээ бүрээр ухаж шалтгааныг нь олоод залруулсан.",
+      },
+      {
+        text: "Acted as the bridge between the team and partner sellers on one side and the Russian director and management on the other.",
+        textMn:
+          "Багийн болон түнш борлуулагчдын санал хүсэлтийг орос захирал, удирдлагад хүргэж, хоёр талыг холбох гүүр болж ажилласан.",
+      },
+      {
+        text: "Regularly tested the internal web system for orders, transport, and stock, and reported bugs to the developer team to get them fixed.",
+        textMn:
+          "Барааны захиалга, тээвэр, үлдэгдэл бүртгэдэг дотоод веб системийн ажиллагааг тогтмол шалгаж, олдсон алдааг хөгжүүлэгчдийн багт мэдэгдэн засварлуулдаг байсан.",
+      },
+      {
+        text: "Built formulas and dashboards in Google Sheets that automated sales and stock reporting.",
+        textMn:
+          "Google Sheets дээр томьёо болон dashboard бүтээж, борлуулалт, үлдэгдлийн тайланг автоматжуулсан.",
+      },
+    ],
   },
 ];

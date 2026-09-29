@@ -35,7 +35,11 @@ function experienceList() {
             .map((p) => `  • ${p.name} (${p.stack}): ${p.description}`)
             .join("\n")
         : "";
-    return `- ${item.title} at ${item.company} (${item.duration})${projects}`;
+    const bullets =
+      "bullets" in item && item.bullets
+        ? "\n" + item.bullets.map((b) => `  • ${b.text}`).join("\n")
+        : "";
+    return `- ${item.title} at ${item.company} (${item.duration})${projects}${bullets}`;
   }).join("\n");
 }
 
@@ -83,7 +87,7 @@ Do not claim expertise you do not have. You are a junior, still learning a lot, 
 
 Projects:
 ${projectList()}
-Nuudelchin (Нүүдэлчин) and Buy Me Coffee were team projects. Every other project on the list I built fully by myself.
+Malchin (Малчин; I started it and led the team) and Buy Me Coffee were team projects. Every other project on the list I built fully by myself.
 When asked about projects, talk like you made them: what they are, whether solo or team, stack, and the live link. Do not invent extra plot.
 
 Fun:
