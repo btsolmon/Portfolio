@@ -17,7 +17,7 @@ export const ABOUT = {
   cityMn: "Улаанбаатар",
   countryMn: "Монгол улс",
   summary:
-    "I am a full-stack developer based in Ulaanbaatar, currently completing the Software Engineering program at Pinecone Academy. I originally studied law in Moscow, then followed a lifelong passion for computers and moved into software. Before tech I spent 6 years in finance, logistics, and business operations, advancing from office manager to senior manager. I combine that with JavaScript, TypeScript, React, Next.js, Node.js, and databases. My philosophy: make things fast, accessible, and easy to use.",
+    "I am a full-stack developer based in Ulaanbaatar with 1 year of hands-on experience in Next.js, TypeScript, and SQL, currently finishing the Software Engineering program at Pinecone Academy. I originally studied law in Moscow, then followed a lifelong passion for computers and moved into software. Before tech I spent 6 years running finance and import logistics — about 10M MNT in daily sales and 70+ product lines — advancing from office manager to senior manager. I combine that business background with software engineering to turn real business requirements into technical solutions. My philosophy: make things fast, accessible, and easy to use.",
   education: [
     "Mongolian-Russian Joint School No. 3 (Орос 3), Ulaanbaatar",
     "RUDN University, Moscow — law / jurisprudence",
@@ -68,65 +68,40 @@ export const MY_STACK = {
     { name: "React", icon: "/logo/react.png" },
     { name: "Next.js", icon: "/logo/next.png" },
     { name: "Tailwind CSS", icon: "/logo/tailwind.png" },
+    { name: "HTML5", icon: "/logo/html5.svg" },
+    { name: "CSS3", icon: "/logo/css3.svg" },
   ],
   backend: [
     { name: "Node.js", icon: "/logo/node.png" },
     { name: "Express.js", icon: "/logo/express.png" },
+    { name: "REST API" },
+    { name: "GraphQL", icon: "/logo/graphql.svg" },
+    { name: "Authentication" },
   ],
   database: [
-    { name: "MySQL", icon: "/logo/mysql.svg" },
     { name: "PostgreSQL", icon: "/logo/postgreSQL.png" },
+    { name: "MySQL", icon: "/logo/mysql.svg" },
     { name: "MongoDB", icon: "/logo/mongodb.svg" },
     { name: "Prisma", icon: "/logo/prisma.svg" },
+    { name: "SQL" },
   ],
   tools: [
-    { name: "Git", icon: "/logo/git.png" },
+    { name: "Git & GitHub", icon: "/logo/git.png" },
     { name: "Docker", icon: "/logo/docker.svg" },
-   
+    { name: "Vercel", icon: "/logo/vercel.svg" },
+    { name: "Postman", icon: "/logo/postman.svg" },
+    { name: "Jest", icon: "/logo/jest.svg" },
+    { name: "Nx Monorepo", icon: "/logo/nx.svg" },
+  ],
+  cloud: [
+    { name: "Cloudflare Workers", icon: "/logo/cloudflare.svg" },
+    { name: "Cloudflare Pages", icon: "/logo/cloudflare.svg" },
+    { name: "D1", icon: "/logo/cloudflare.svg" },
+    { name: "R2", icon: "/logo/cloudflare.svg" },
   ],
 };
 
 export const PROJECTS: IProject[] = [
-  {
-    title: "Pinetour",
-    slug: "pinetour",
-    year: 2026,
-    techStack: ["HTML", "CSS"],
-    thumbnail: "/projects/pinetour.png",
-    liveUrl: "https://pine-tour-ten.vercel.app/",
-  },
-  {
-    title: "Apple Web",
-    slug: "apple-web",
-    year: 2026,
-    techStack: ["HTML", "CSS"],
-    thumbnail: "/projects/apple-web.png",
-    liveUrl: "https://apple-web-sigma-ten.vercel.app/",
-  },
-  {
-    title: "DOM",
-    slug: "dom",
-    year: 2025,
-    techStack: ["HTML", "CSS", "JavaScript"],
-    thumbnail: "/projects/dom.png",
-    liveUrl: "https://dom-rouge.vercel.app/",
-  },
-  {
-    title: "To Do App",
-    slug: "to-do-app",
-    year: 2025,
-    techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS"],
-    thumbnail: "/projects/to-do-app.png",
-    liveUrl: "https://to-do-app-nu-bay.vercel.app/",
-  },
-  {
-    title: "Multi Step Form",
-    slug: "multi-step-form",
-    year: 2025,
-    techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS"],
-    thumbnail: "/projects/multi-step-form.png",
-    liveUrl: "https://multi-step-form-eight-beta.vercel.app/",
-  },
   {
     title: "Movie Web App",
     slug: "movie-web-app",
@@ -142,14 +117,6 @@ export const PROJECTS: IProject[] = [
     techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS", "TypeScript", "Eslint", "PostgreSQL"],
     thumbnail: "/projects/food-delivery-app.png",
     liveUrl: "https://food-delivery-app-git-main-btsolmons-projects.vercel.app/",
-  },
-  {
-    title: "AI Image Models",
-    slug: "ai-image-models",
-    year: 2025,
-    techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS", "TypeScript", "Eslint"],
-    thumbnail: "/projects/ai-image-models.png",
-    liveUrl: "https://ai-image-models-eight.vercel.app/",
   },
   {
     title: "Buy Me Coffee",
@@ -173,19 +140,45 @@ export const PROJECTS: IProject[] = [
 
 export const MY_EXPERIENCE = [
   {
-    company: "Forise Group",
-    companyMn: "Форайз Групп",
-    title: "Senior Office Manager",
-    titleMn: "Ахлах оффис менежер",
-    duration: "Nov 2019 – Aug 2025",
-    durationMn: "2019 оны 11-р сар – 2025 оны 8-р сар",
+    company: "Pinecone Academy",
+    companyMn: "Pinecone Academy",
+    title: "Intern Developer",
+    titleMn: "Дадлагажигч хөгжүүлэгч",
+    duration: "Aug 2026 – Oct 2026",
+    durationMn: "2026 оны 8-р сар – 2026 оны 10-р сар",
+    projects: [
+      {
+        name: "StudyJam — Education 2.0",
+        stack: "Next.js, PostgreSQL, Drizzle ORM, Socket.io, Gemini",
+        description:
+          "Collaborative study platform that generates quizzes from notes with AI and shares them within a class. Built a real-time Kahoot-style quiz game with Socket.io, gamification (points, streaks, levels, in-app shop), JWT authentication, and a profile/avatar customizer. In a survey of two 12th-grade groups, the class that used StudyJam before exams scored about 20% higher on average.",
+        descriptionMn:
+          "Тэмдэглэлээс quiz-ийг AI-аар автоматаар үүсгэж, ангиараа хамтран суралцдаг платформ. Socket.io-р бодит цагийн Kahoot маягийн тоглоом, gamification (оноо, streak, level, in-app shop), JWT нэвтрэлт, профайл/аватар customizer хийсэн. 12-р ангийн хоёр бүлэгт хийсэн судалгаагаар шалгалтын өмнө StudyJam ашигласан ангийн дундаж дүн 20 хувиар өндөр гарсан.",
+      },
+      {
+        name: "RFP Engine — AI Productivity",
+        stack: "Cloudflare Workers, D1, Vectorize, Workers AI, Gemini, Next.js, GraphQL",
+        description:
+          "RAG system that drafts sourced proposal answers for tenders. Built the full RAG pipeline (chunk → embedding → Vectorize search) on Cloudflare Workers AI, grounding prompts that prevent hallucination, requirement-to-evidence matching, and most of the backend. Cut proposal drafting from 2–10 days to moments.",
+        descriptionMn:
+          "Тендерийн саналын ноорогийг эх сурвалжтайгаар автоматаар үүсгэдэг RAG систем. Cloudflare Workers AI дээр RAG-ийн бүтэн сүлжээ (chunk → embedding → Vectorize хайлт), hallucination-аас сэргийлэх grounding prompt, шаардлага-нотолгооны тохируулга болон backend-ийн ихэнх хэсгийг хийсэн. Саналын ноорог бэлтгэх хугацааг 2–10 хоногоос хормын төдийд болгосон.",
+      },
+    ],
   },
   {
     company: "Pinecone Academy",
     companyMn: "Pinecone Academy",
-    title: "Software Engineering Student",
-    titleMn: "Програм хангамжийн инженерээр суралцагч",
-    duration: "Jan 2026 – Oct 2026",
-    durationMn: "2026 оны 1-р сар – 2026 оны 10-р сар",
+    title: "Software Engineering Bootcamp — Fullstack Developer",
+    titleMn: "Software Engineering Bootcamp — Fullstack хөгжүүлэгч",
+    duration: "Jan 2026 – Aug 2026",
+    durationMn: "2026 оны 1-р сар – 2026 оны 8-р сар",
+  },
+  {
+    company: "Forise Group",
+    companyMn: "Форайз Групп",
+    title: "Senior Manager — Import & Retail Operations",
+    titleMn: "Ахлах менежер — импорт, жижиглэн худалдааны үйл ажиллагаа",
+    duration: "Nov 2019 – Aug 2025",
+    durationMn: "2019 оны 11-р сар – 2025 оны 8-р сар",
   },
 ];

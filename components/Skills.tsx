@@ -77,13 +77,15 @@ export default function Skills() {
                     className="slide-up flex items-center gap-3.5 leading-none"
                     key={item.name}
                   >
-                    <img
-                      src={item.icon}
-                      alt={item.name}
-                      width={40}
-                      height={40}
-                      className={`max-h-10 w-auto${item.name === "Prisma" || item.name === "Docker" ? " dark:invert" : ""}`}
-                    />
+                    {"icon" in item && item.icon && (
+                      <img
+                        src={item.icon}
+                        alt={item.name}
+                        width={40}
+                        height={40}
+                        className={`max-h-10 w-auto${["Prisma", "Docker", "Vercel", "Nx Monorepo"].includes(item.name) ? " dark:invert" : ""}`}
+                      />
+                    )}
                     <span className="text-2xl capitalize">{item.name}</span>
                   </div>
                 ))}

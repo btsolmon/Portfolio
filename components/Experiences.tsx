@@ -71,6 +71,23 @@ export default function Experiences() {
               <p className="text-lg text-muted-foreground">
                 {locale === "mn" ? item.durationMn : item.duration}
               </p>
+              {"projects" in item && item.projects && (
+                <div className="mt-6 grid gap-6">
+                  {item.projects.map((project) => (
+                    <div key={project.name}>
+                      <p className="text-2xl">{project.name}</p>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {project.stack}
+                      </p>
+                      <p className="mt-2 max-w-[760px] text-lg">
+                        {locale === "mn"
+                          ? project.descriptionMn
+                          : project.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>

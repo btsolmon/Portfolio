@@ -27,9 +27,16 @@ function projectList() {
 }
 
 function experienceList() {
-  return MY_EXPERIENCE.map(
-    (item) => `- ${item.title} at ${item.company} (${item.duration})`,
-  ).join("\n");
+  return MY_EXPERIENCE.map((item) => {
+    const projects =
+      "projects" in item && item.projects
+        ? "\n" +
+          item.projects
+            .map((p) => `  • ${p.name} (${p.stack}): ${p.description}`)
+            .join("\n")
+        : "";
+    return `- ${item.title} at ${item.company} (${item.duration})${projects}`;
+  }).join("\n");
 }
 
 export function buildSystemPrompt() {
