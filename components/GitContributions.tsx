@@ -124,22 +124,34 @@ export default function GitContributions() {
   useEffect(() => {
     let cancelled = false;
 
-    fetch("/api/contributions")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load contributions");
-        return res.json() as Promise<ApiResponse>;
-      })
-      .then((data) => {
-        if (cancelled) return;
-        setDays(data.contributions ?? []);
-        setTotal(Object.values(data.total ?? {}).reduce((sum, year) => sum + year, 0));
-      })
-      .catch(() => {
-        if (!cancelled) setError(true);
-      });
+    const load = () =>
+      fetch("/api/contributions", { cache: "no-store" })
+        .then((res) => {
+          if (!res.ok) throw new Error("Failed to load contributions");
+          return res.json() as Promise<ApiResponse>;
+        })
+        .then((data) => {
+          if (cancelled) return;
+          setDays(data.contributions ?? []);
+          setTotal(Object.values(data.total ?? {}).reduce((sum, year) => sum + year, 0));
+          setError(false);
+        })
+        .catch(() => {
+          if (!cancelled) setError(true);
+        });
+
+    const onVisible = () => {
+      if (document.visibilityState === "visible") load();
+    };
+
+    load();
+    const interval = window.setInterval(onVisible, 60_000);
+    document.addEventListener("visibilitychange", onVisible);
 
     return () => {
       cancelled = true;
+      window.clearInterval(interval);
+      document.removeEventListener("visibilitychange", onVisible);
     };
   }, []);
 

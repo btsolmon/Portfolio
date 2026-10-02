@@ -111,38 +111,44 @@ export const MY_STACK = {
 
 export const PROJECTS: IProject[] = [
   {
-    title: "MovieZ",
-    slug: "movie-web-app",
-    year: 2025,
+    title: "Malchin",
+    slug: "nuudelchin",
+    year: 2026,
     techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS", "TypeScript", "Eslint"],
-    thumbnail: "/projects/movie-web-app.png",
-    liveUrl: "https://movie-web-app-swart-one.vercel.app/",
+    thumbnail: "/projects/nuudelchin.png",
+    liveUrl: "https://malchin-zeta.vercel.app/",
+    sourceCode: "https://github.com/btsolmon/Malchin",
+    team: true,
+    description:
+      "Web game about the life of a Mongolian herder, playable in the browser and on mobile. Started on my own initiative and led the team. I focused on the controls, inventory, and shop systems.",
+    descriptionMn:
+      "Монгол малчны амьдралыг сэдэвлэсэн, гар утаснаас ч тоглох боломжтой браузер тоглоом. Өөрийн санаачилгаар эхлүүлж, багийг удирдан хөгжүүлсэн. Controls, inventory, shop системүүд дээр голчлон ажилласан.",
   },
   {
     title: "Food Delivery App",
     slug: "food-delivery-app",
-    year: 2025,
+    year: 2026,
     techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS", "TypeScript", "Eslint", "PostgreSQL"],
     thumbnail: "/projects/food-delivery-app.png",
     liveUrl: "https://food-delivery-app-git-main-btsolmons-projects.vercel.app/",
+    sourceCode: "https://github.com/btsolmon/Food-Delivery-App",
+    description:
+      "Food delivery platform with a categorized menu, cart, delivery address, authentication, and the full order flow. I made sure users never get stuck between picking a dish and paying, focusing on the data model and UX.",
+    descriptionMn:
+      "Ангилалтай цэс, сагс, хүргэлтийн хаяг, нэвтрэлт болон захиалгын бүрэн урсгалыг хэрэгжүүлсэн. Хэрэглэгч цэс сонгохоос төлбөр хийж дуустал урсгал хаана ч зогсохгүй байхад анхаарч, өгөгдлийн бүтэц болон UX дээр голчлон ажилласан.",
   },
   {
-    title: "Buy Me Coffee",
-    slug: "buy-me-coffee",
-    year: 2025,
-    techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS", "TypeScript", "Eslint", "PostgreSQL"],
-    thumbnail: "/projects/buy-me-coffee.png",
-    liveUrl: "https://team4-buy-me-coffee.vercel.app/",
-    team: true,
-  },
-  {
-    title: "Malchin",
-    slug: "nuudelchin",
-    year: 2025,
+    title: "MovieZ",
+    slug: "movie-web-app",
+    year: 2026,
     techStack: ["Javascript", "Next.js", "Node.js", "React", "Tailwind CSS", "TypeScript", "Eslint"],
-    thumbnail: "/projects/nuudelchin.png",
-    liveUrl: "https://malchin-zeta.vercel.app/",
-    team: true,
+    thumbnail: "/projects/movie-web-app.png",
+    liveUrl: "https://movie-web-app-swart-one.vercel.app/",
+    sourceCode: "https://github.com/btsolmon/Movie-Web-App",
+    description:
+      "Movie discovery platform connected to an external movie API, with Upcoming, Popular, and Top Rated categories and full-length playback. I focused on dynamic data loading, the video player, and a responsive interface.",
+    descriptionMn:
+      "Кино мэдээллийн гадаад API-тай холбогдож, Upcoming, Popular, Top Rated ангилалаар кино харуулж, бүрэн хэмжээний киног шууд үзэх боломжтой платформ. Динамик өгөгдөл ачаалалт, кино тоглуулагч, responsive интерфейс дээр голчлон ажилласан.",
   },
 ];
 

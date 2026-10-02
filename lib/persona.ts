@@ -22,7 +22,7 @@ function projectList() {
     const who = project.team
       ? "team project"
       : "built entirely by me, solo";
-    return `- ${project.title} (${project.year}, ${who}): ${project.techStack.join(", ")}${url}`;
+    return `- ${project.title} (${project.year}, ${who}): ${project.techStack.join(", ")}${url}${project.description ? `\n  ${project.description}` : ""}`;
   }).join("\n");
 }
 

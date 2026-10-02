@@ -19,4 +19,6 @@ export interface IProject {
   liveUrl?: string;
   sourceCode?: string;
   team?: boolean;
+  description?: string;
+  descriptionMn?: string;
 }

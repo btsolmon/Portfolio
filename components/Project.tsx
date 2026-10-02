@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
 import { useRef } from "react";
+import { useLanguage } from "@/lib/language/LanguageProvider";
 
 gsap.registerPlugin(useGSAP);
 
@@ -21,6 +22,9 @@ export default function Project({
   selectedProject,
   onMouseEnter,
 }: Props) {
+  const { locale } = useLanguage();
+  const description =
+    locale === "mn" ? project.descriptionMn : project.description;
   const externalLinkSVGRef = useRef<SVGSVGElement>(null);
   const { context, contextSafe } = useGSAP(() => {}, {
     scope: externalLinkSVGRef,
@@ -109,6 +113,11 @@ export default function Project({
               </div>
             ))}
           </div>
+          {description ? (
+            <p className="mt-3 max-w-[560px] text-sm leading-relaxed text-muted-foreground md:max-w-[50%]">
+              {description}
+            </p>
+          ) : null}
           {project.liveUrl ? (
             <p className="mt-3 text-sm text-primary underline-offset-4 group-hover:underline">
               {project.liveUrl.replace(/^https?:\/\//, "")}
