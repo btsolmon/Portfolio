@@ -2,6 +2,7 @@
 
 import AboutMe from "@/components/AboutMe";
 import ChatPanel from "@/components/ChatPanel";
+import Education from "@/components/Education";
 import Experiences from "@/components/Experiences";
 import FluidCursor from "@/components/FluidCursor";
 import Footer from "@/components/Footer";
@@ -32,6 +33,7 @@ export default function Home() {
         <AboutMe />
         <Skills />
         <Experiences />
+        <Education />
         <ProjectList />
         <GitContributions />
       </main>

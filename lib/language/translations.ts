@@ -23,6 +23,7 @@ export const translations = {
       home: "Home",
       about: "About Me",
       experience: "Experience",
+      education: "Education",
       projects: "Projects",
       github: "GitHub",
     },
@@ -63,6 +64,9 @@ export const translations = {
     experience: {
       title: "My Experience",
       downloadCv: "Download CV",
+    },
+    education: {
+      title: "Education",
     },
     projects: {
       title: "Selected Projects",
@@ -125,6 +129,7 @@ export const translations = {
       home: "Нүүр",
       about: "Миний тухай",
       experience: "Туршлага",
+      education: "Боловсрол",
       projects: "Төслүүд",
       github: "GitHub",
     },
@@ -165,6 +170,9 @@ export const translations = {
     experience: {
       title: "Миний туршлага",
       downloadCv: "CV татах",
+    },
+    education: {
+      title: "Боловсрол",
     },
     projects: {
       title: "Миний төслүүд",
@@ -221,6 +229,7 @@ export type TranslationKey =
   | "nav.home"
   | "nav.about"
   | "nav.experience"
+  | "nav.education"
   | "nav.projects"
   | "nav.github"
   | "hero.hey"
@@ -251,6 +260,7 @@ export type TranslationKey =
   | "stack.cloud"
   | "stack.languages"
   | "experience.title"
+  | "education.title"
   | "experience.downloadCv"
   | "projects.title"
   | "github.title"

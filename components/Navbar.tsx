@@ -15,12 +15,14 @@ const COLORS = [
   "bg-teal-500 text-black",
   "bg-indigo-500 text-white",
   "bg-rose-500 text-white",
+  "bg-orange-500 text-black",
 ];
 
 const MENU_LINKS: { name: TranslationKey; url: string }[] = [
   { name: "nav.home", url: "#home" },
   { name: "nav.about", url: "#about-me" },
   { name: "nav.experience", url: "#my-experience" },
+  { name: "nav.education", url: "#education" },
   { name: "nav.projects", url: "#selected-projects" },
   { name: "nav.github", url: "#github" },
 ];

@@ -162,12 +162,12 @@ export const MY_EXPERIENCE = [
     durationMn: "2026 оны 8-р сар – 2026 оны 10-р сар",
     projects: [
       {
-        name: "StudyJam — Education 2.0",
+        name: "KIZZ — Education 2.0",
         stack: "Next.js, PostgreSQL, Drizzle ORM, Socket.io, Gemini",
         description:
-          "Collaborative study platform that generates quizzes from notes with AI and shares them within a class. Built a real-time Kahoot-style quiz game with Socket.io, gamification (points, streaks, levels, in-app shop), JWT authentication, and a profile/avatar customizer. In a survey of two 12th-grade groups, the class that used StudyJam before exams scored about 20% higher on average.",
+          "Collaborative study platform that generates quizzes from notes with AI and shares them within a class. Built a real-time Kahoot-style quiz game with Socket.io, gamification (points, streaks, levels, in-app shop), JWT authentication, and a profile/avatar customizer. In a survey of two 12th-grade groups, the class that used KIZZ before exams scored about 20% higher on average.",
         descriptionMn:
-          "Тэмдэглэлээс quiz-ийг AI-аар автоматаар үүсгэж, ангиараа хамтран суралцдаг платформ. Socket.io-р бодит цагийн Kahoot маягийн тоглоом, gamification (оноо, streak, level, in-app shop), JWT нэвтрэлт, профайл/аватар customizer хийсэн. 12-р ангийн хоёр бүлэгт хийсэн судалгаагаар шалгалтын өмнө StudyJam ашигласан ангийн дундаж дүн 20 хувиар өндөр гарсан.",
+          "Тэмдэглэлээс quiz-ийг AI-аар автоматаар үүсгэж, ангиараа хамтран суралцдаг платформ. Socket.io-р бодит цагийн Kahoot маягийн тоглоом, gamification (оноо, streak, level, in-app shop), JWT нэвтрэлт, профайл/аватар customizer хийсэн. 12-р ангийн хоёр бүлэгт хийсэн судалгаагаар шалгалтын өмнө KIZZ ашигласан ангийн дундаж дүн 20 хувиар өндөр гарсан.",
       },
       {
         name: "RFP Engine — AI Productivity",
@@ -180,14 +180,6 @@ export const MY_EXPERIENCE = [
     ],
   },
   {
-    company: "Pinecone Academy",
-    companyMn: "Pinecone Academy",
-    title: "Software Engineering Bootcamp — Fullstack Developer",
-    titleMn: "Software Engineering Bootcamp — Fullstack хөгжүүлэгч",
-    duration: "Jan 2026 – Aug 2026",
-    durationMn: "2026 оны 1-р сар – 2026 оны 8-р сар",
-  },
-  {
     company: "Forise Group",
     companyMn: "Форайз Групп",
     title: "Senior Manager — Import & Retail Operations",
@@ -195,6 +187,16 @@ export const MY_EXPERIENCE = [
     duration: "Nov 2019 – Aug 2025",
     durationMn: "2019 оны 11-р сар – 2025 оны 8-р сар",
     bullets: [
+      {
+        text: "Regularly tested the internal web system for orders, transport, and stock, and reported bugs to the developer team to get them fixed.",
+        textMn:
+          "Барааны захиалга, тээвэр, үлдэгдэл бүртгэдэг дотоод веб системийн ажиллагааг тогтмол шалгаж, олдсон алдааг хөгжүүлэгчдийн багт мэдэгдэн засварлуулдаг байсан.",
+      },
+      {
+        text: "Built formulas and dashboards in Google Sheets that automated sales and stock reporting.",
+        textMn:
+          "Google Sheets дээр томьёо болон dashboard бүтээж, борлуулалт, үлдэгдлийн тайланг автоматжуулсан.",
+      },
       {
         text: "Kept end-to-end records for 70+ product lines imported from Russia — orders, procurement, transport, and warehouse stock — tracking every item's status and movement by hand.",
         textMn:
@@ -210,16 +212,35 @@ export const MY_EXPERIENCE = [
         textMn:
           "Багийн болон түнш борлуулагчдын санал хүсэлтийг орос захирал, удирдлагад хүргэж, хоёр талыг холбох гүүр болж ажилласан.",
       },
-      {
-        text: "Regularly tested the internal web system for orders, transport, and stock, and reported bugs to the developer team to get them fixed.",
-        textMn:
-          "Барааны захиалга, тээвэр, үлдэгдэл бүртгэдэг дотоод веб системийн ажиллагааг тогтмол шалгаж, олдсон алдааг хөгжүүлэгчдийн багт мэдэгдэн засварлуулдаг байсан.",
-      },
-      {
-        text: "Built formulas and dashboards in Google Sheets that automated sales and stock reporting.",
-        textMn:
-          "Google Sheets дээр томьёо болон dashboard бүтээж, борлуулалт, үлдэгдлийн тайланг автоматжуулсан.",
-      },
     ],
+  },
+];
+
+export const EDUCATION = [
+  {
+    school: "Pinecone Academy",
+    schoolMn: "Pinecone Academy",
+    program: "Software Engineering Bootcamp — Fullstack Developer",
+    programMn: "Software Engineering Bootcamp — Fullstack хөгжүүлэгч",
+    duration: "Jan 2026 – Aug 2026",
+    durationMn: "2026 оны 1-р сар – 2026 оны 8-р сар",
+    location: "Ulaanbaatar",
+    locationMn: "Улаанбаатар",
+  },
+  {
+    school: "RUDN University",
+    schoolMn: "РУДН их сургууль",
+    program: "Law / jurisprudence",
+    programMn: "Хууль зүй",
+    location: "Moscow",
+    locationMn: "Москва",
+  },
+  {
+    school: "Mongolian-Russian Joint School No. 3",
+    schoolMn: "Монгол-Оросын нийтийн 3-р сургууль (Орос 3)",
+    program: "Secondary school",
+    programMn: "Бүрэн дунд боловсрол",
+    location: "Ulaanbaatar",
+    locationMn: "Улаанбаатар",
   },
 ];

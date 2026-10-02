@@ -149,16 +149,30 @@ export default function Project({
   const className =
     "project-item group block cursor-pointer border-b py-5 leading-none transition-all first:!pt-0 last:border-none last:pb-0 md:group-hover/projects:opacity-30 md:hover:!opacity-100";
 
+  const codeLink = project.sourceCode ? (
+    <a
+      href={project.sourceCode}
+      target="_blank"
+      rel="noreferrer"
+      className="mt-3 inline-block text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline md:ml-11"
+    >
+      Code ↗
+    </a>
+  ) : null;
+
   if (project.liveUrl) {
     return (
-      <a
-        href={project.liveUrl}
-        className={className}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {inner}
-      </a>
+      <div className={className}>
+        <a
+          href={project.liveUrl}
+          className="block"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          {inner}
+        </a>
+        {codeLink}
+      </div>
     );
   }
 
@@ -169,6 +183,7 @@ export default function Project({
       onMouseLeave={handleMouseLeave}
     >
       {inner}
+      {codeLink}
     </div>
   );
 }
