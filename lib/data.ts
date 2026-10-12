@@ -237,7 +237,7 @@ export const EDUCATION = [
   },
   {
     school: "Mongolian-Russian Joint School No. 3",
-    schoolMn: "Монгол-Оросын нийтийн 3-р сургууль (Орос 3)",
+    schoolMn: "Монгол-Оросын хамтарсан 3-р сургууль",
     program: "Secondary school",
     programMn: "Бүрэн дунд боловсрол",
     location: "Ulaanbaatar",
